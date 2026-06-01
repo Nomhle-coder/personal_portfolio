@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nomhle Amanda — Junior Software Engineer & JuniorQA Engineer & Cybersecurity Enthusiast</title>
+<meta name="description" content="Portfolio of Nomhle Amanda — Junior Software Developer, Junior QA Engineer, Cybersecurity Enthusiast & Technical Mentor based in Johannesburg, South Africa.">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+/* ── THEME VARIABLES ─────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg:#0a0e1a; --surface:#111827; --surface2:#1a2236; --surface3:#0d1525;
+  --green:#00ff88; --green-dim:#00c96a; --cyan:#00e5ff; --orange:#ff6b35; --purple:#b06cff; --yellow:#ffd166;
+  --text:#e8edf5; --text-dim:#7a8ba0; --text-muted:#3d4f65;
+  --border:rgba(0,255,136,0.15); --border2:rgba(255,255,255,0.07);
+  --glow:0 0 30px rgba(0,255,136,0.15);
+  --card-bg:#111827; --nav-bg:rgba(10,14,26,0.88);
+}
+[data-theme="light"] {
+  --bg:#f0f4ff; --surface:#ffffff; --surface2:#e8edf8; --surface3:#f7f9ff;
+  --green:#007a42; --green-dim:#006235; --cyan:#0088b3; --orange:#d94f1e; --purple:#7b3fcc; --yellow:#c47a00;
+  --text:#0d1525; --text-dim:#4a5a72; --text-muted:#9aabbf;
+  --border:rgba(0,122,66,0.2); --border2:rgba(0,0,0,0.08);
+  --glow:0 0 20px rgba(0,122,66,0.1);
+  --card-bg:#ffffff; --nav-bg:rgba(240,244,255,0.92);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden;cursor:none;transition:background 0.4s,color 0.4s;}
+[data-theme="light"] body{cursor:auto;}
+ 
+/* ── CURSOR ── */
+.cursor{width:12px;height:12px;background:var(--green);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;mix-blend-mode:screen;transition:background 0.3s;}
+.cursor-ring{width:36px;height:36px;border:1.5px solid var(--green);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;opacity:0.5;transition:width 0.2s,height 0.2s,opacity 0.2s,border-color 0.3s;}
+[data-theme="light"] .cursor,[data-theme="light"] .cursor-ring{display:none;}
+ 
+/* ── NOISE ── */
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.35;}
+[data-theme="light"] body::before{opacity:0.1;}
+ 
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--green);border-radius:2px;}
+ 
+/* ── PROGRESS BAR ── */
+#progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--green),var(--cyan));width:0%;z-index:9997;transition:width 0.1s linear;}
+ 
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 4rem;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all 0.3s;}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--green);letter-spacing:-0.02em;cursor:none;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--text-dim);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;cursor:none;}
+.nav-links a:hover{color:var(--green);}
+.nav-right{display:flex;align-items:center;gap:1rem;}
+.theme-toggle{background:var(--surface2);border:1px solid var(--border2);color:var(--text);width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:none;transition:all 0.2s;}
+[data-theme="light"] .theme-toggle{cursor:pointer;}
+.theme-toggle:hover{border-color:var(--green);color:var(--green);}
+.nav-cta{font-family:'DM Mono',monospace;font-size:0.72rem;font-weight:500;color:var(--bg);background:var(--green);border:none;padding:0.55rem 1.3rem;border-radius:4px;cursor:none;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s;}
+[data-theme="light"] .nav-cta{cursor:pointer;}
+.nav-cta:hover{background:var(--green-dim);box-shadow:var(--glow);}
+.nav-mobile-toggle{display:none;background:none;border:1px solid var(--border2);color:var(--text);width:38px;height:38px;border-radius:8px;font-size:1.1rem;cursor:pointer;align-items:center;justify-content:center;}
+ 
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:8rem 4rem 4rem;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,136,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);}
+[data-theme="light"] .hero-grid{background-image:linear-gradient(rgba(0,122,66,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,122,66,0.06) 1px,transparent 1px);}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+.orb1{width:500px;height:500px;background:rgba(0,255,136,0.07);top:-100px;right:-100px;}
+.orb2{width:400px;height:400px;background:rgba(0,229,255,0.05);bottom:-80px;left:40%;}
+.orb3{width:300px;height:300px;background:rgba(176,108,255,0.06);top:30%;left:-80px;}
+[data-theme="light"] .orb1{background:rgba(0,122,66,0.08);}
+[data-theme="light"] .orb2{background:rgba(0,136,179,0.06);}
+[data-theme="light"] .orb3{background:rgba(123,63,204,0.05);}
+.hero-tag{font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--green);letter-spacing:0.15em;text-transform:uppercase;border:1px solid var(--border);padding:0.35rem 0.9rem;border-radius:20px;margin-bottom:1.5rem;display:inline-flex;align-items:center;gap:0.5rem;animation:fadeUp 0.6s ease both;}
+.hero-tag::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s ease infinite;}
+h1.hero-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.8rem,6vw,5.5rem);line-height:1.05;letter-spacing:-0.03em;margin-bottom:1rem;animation:fadeUp 0.6s 0.1s ease both;}
+.hero-title .accent{color:var(--green);}
+.hero-title .dim{color:var(--text-dim);font-size:0.75em;display:block;}
+.hero-sub{font-size:1.05rem;color:var(--text-dim);max-width:580px;margin-bottom:2.5rem;line-height:1.75;animation:fadeUp 0.6s 0.2s ease both;}
+.hero-sub strong{color:var(--text);}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.6s 0.3s ease both;}
+.btn-primary{font-family:'DM Mono',monospace;font-size:0.8rem;font-weight:500;color:var(--bg);background:var(--green);padding:0.85rem 2rem;border-radius:6px;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s;cursor:none;}
+[data-theme="light"] .btn-primary{cursor:pointer;}
+.btn-primary:hover{background:var(--green-dim);box-shadow:0 0 40px rgba(0,255,136,0.3);transform:translateY(-2px);}
+.btn-secondary{font-family:'DM Mono',monospace;font-size:0.8rem;color:var(--text);background:transparent;border:1px solid var(--border2);padding:0.85rem 2rem;border-radius:6px;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s;cursor:none;}
+[data-theme="light"] .btn-secondary{cursor:pointer;}
+.btn-secondary:hover{border-color:var(--green);color:var(--green);transform:translateY(-2px);}
+.hero-stats{display:flex;gap:3rem;margin-top:4rem;animation:fadeUp 0.6s 0.4s ease both;}
+.stat-item{display:flex;flex-direction:column;gap:0.2rem;}
+.stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--green);}
+.stat-label{font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--text-dim);letter-spacing:0.1em;text-transform:uppercase;}
+ 
+/* ── TERMINAL ── */
+.hero-terminal{position:absolute;right:4rem;top:50%;transform:translateY(-50%);width:400px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--glow),0 40px 80px rgba(0,0,0,0.5);animation:fadeLeft 0.7s 0.4s ease both;}
+.terminal-bar{background:var(--surface2);padding:0.7rem 1rem;display:flex;align-items:center;gap:0.5rem;}
+.t-dot{width:10px;height:10px;border-radius:50%;}
+.t-dot:nth-child(1){background:#ff5f57;} .t-dot:nth-child(2){background:#febc2e;} .t-dot:nth-child(3){background:#28c840;}
+.terminal-title{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--text-dim);margin:0 auto;}
+.terminal-body{padding:1.2rem 1.4rem;font-family:'DM Mono',monospace;font-size:0.78rem;line-height:2;}
+.t-line{display:flex;gap:0.5rem;} .t-prompt{color:var(--green);} .t-cmd{color:var(--cyan);}
+.t-out{color:var(--text-dim);padding-left:1rem;}
+.t-out.g{color:var(--green);} .t-out.o{color:var(--orange);} .t-out.p{color:var(--purple);}
+.t-cursor{display:inline-block;width:8px;height:14px;background:var(--green);vertical-align:middle;animation:blink 1s step-end infinite;}
+ 
+/* ── SECTION BASE ── */
+section{padding:6rem 4rem;}
+.section-tag{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--green);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;}
+h2.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.02em;margin-bottom:1rem;}
+.section-desc{color:var(--text-dim);max-width:560px;font-size:1rem;margin-bottom:3rem;}
+.alt-bg{background:var(--surface);}
+ 
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.about-img-placeholder{width:100%;aspect-ratio:4/5;background:var(--surface2);border:1px solid var(--border);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:var(--text-dim);font-family:'DM Mono',monospace;font-size:0.8rem;position:relative;overflow:hidden;}
+.about-img-placeholder::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,255,136,0.05),rgba(0,229,255,0.03));}
+.about-img-icon{font-size:4rem;}
+.about-badge{position:absolute;bottom:-16px;right:-16px;background:var(--green);color:var(--bg);font-family:'Syne',sans-serif;font-weight:800;font-size:0.75rem;padding:0.6rem 1rem;border-radius:8px;}
+.about-wrap{position:relative;}
+.about-content p{color:var(--text-dim);margin-bottom:1.2rem;font-size:1rem;}
+.about-content p strong{color:var(--text);}
+.about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;}
+.highlight-item{background:var(--surface2);border:1px solid var(--border2);border-radius:8px;padding:1rem;display:flex;flex-direction:column;gap:0.3rem;transition:border-color 0.2s;}
+.highlight-item:hover{border-color:var(--green);}
+.highlight-icon{font-size:1.3rem;}
+.highlight-text{font-size:0.85rem;color:var(--text-dim);}
+.highlight-text strong{color:var(--text);display:block;font-size:0.9rem;}
+ 
+/* ── SKILLS ── */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+.skill-card{background:var(--bg);border:1px solid var(--border2);border-radius:12px;padding:1.5rem;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;cursor:none;}
+[data-theme="light"] .skill-card{cursor:default;}
+.skill-card:hover{transform:translateY(-4px);box-shadow:var(--glow);border-color:rgba(0,255,136,0.35);}
+.skill-card-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;}
+.skill-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.skill-name{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;}
+.skill-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.skill-tag{font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.05em;padding:0.25rem 0.6rem;border-radius:4px;border:1px solid;}
+.tg{color:var(--green);border-color:rgba(0,255,136,0.25);background:rgba(0,255,136,0.05);}
+.tc{color:var(--cyan);border-color:rgba(0,229,255,0.25);background:rgba(0,229,255,0.05);}
+.to{color:var(--orange);border-color:rgba(255,107,53,0.25);background:rgba(255,107,53,0.05);}
+.tp{color:var(--purple);border-color:rgba(176,108,255,0.25);background:rgba(176,108,255,0.05);}
+.ty{color:var(--yellow);border-color:rgba(255,209,102,0.25);background:rgba(255,209,102,0.05);}
+ 
+/* ── PROJECTS ── */
+.projects-filter{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.filter-btn{font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.45rem 1rem;border-radius:4px;border:1px solid var(--border2);background:transparent;color:var(--text-dim);cursor:pointer;transition:all 0.2s;}
+.filter-btn.active,.filter-btn:hover{border-color:var(--green);color:var(--green);background:rgba(0,255,136,0.05);}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;}
+.project-card{background:var(--card-bg);border:1px solid var(--border2);border-radius:16px;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s;cursor:none;}
+[data-theme="light"] .project-card{cursor:default;}
+.project-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.25),var(--glow);}
+.project-card[data-hidden]{display:none;}
+.project-thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden;}
+.project-thumb::after{content:'VIEW PROJECT';position:absolute;inset:0;background:rgba(0,255,136,0.92);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:0.75rem;font-weight:500;letter-spacing:0.15em;color:var(--bg);opacity:0;transition:opacity 0.2s;}
+.project-card:hover .project-thumb::after{opacity:1;}
+.project-body{padding:1.5rem;}
+.project-type{font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--green);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+.project-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:0.5rem;}
+.project-desc{font-size:0.88rem;color:var(--text-dim);margin-bottom:1rem;line-height:1.6;}
+.project-stack{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.2rem;}
+.project-footer{display:flex;gap:0.75rem;padding-top:1rem;border-top:1px solid var(--border2);}
+.proj-link{font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--text-dim);text-decoration:none;letter-spacing:0.05em;transition:color 0.2s;cursor:none;}
+[data-theme="light"] .proj-link{cursor:pointer;}
+.proj-link:hover{color:var(--green);}
+ 
+/* ── MENTORSHIP ── */
+.mentorship-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.mentor-cards{display:flex;flex-direction:column;gap:1rem;}
+.mentor-card{background:var(--bg);border:1px solid var(--border2);border-radius:12px;padding:1.4rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color 0.2s,transform 0.2s;}
+.mentor-card:hover{border-color:rgba(0,255,136,0.35);transform:translateX(4px);}
+.mentor-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;background:rgba(0,255,136,0.08);border:1px solid var(--border);}
+.mentor-card-title{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:0.3rem;}
+.mentor-card-desc{font-size:0.85rem;color:var(--text-dim);line-height:1.6;}
+.impact-box{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:2rem;}
+.impact-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
+.impact-stats{display:flex;flex-direction:column;gap:1.2rem;}
+.impact-stat{display:flex;flex-direction:column;gap:0.35rem;}
+.impact-stat-top{display:flex;justify-content:space-between;align-items:center;}
+.impact-stat-label{font-size:0.85rem;color:var(--text-dim);}
+.impact-stat-num{font-family:'Syne',sans-serif;font-weight:800;color:var(--green);}
+.impact-bar{height:4px;background:var(--surface2);border-radius:2px;overflow:hidden;}
+.impact-bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));border-radius:2px;width:0%;transition:width 1.2s cubic-bezier(0.22,1,0.36,1);}
+ 
+/* ── BLOG / WRITEUPS ── */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;}
+.blog-card{background:var(--card-bg);border:1px solid var(--border2);border-radius:14px;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;cursor:none;}
+[data-theme="light"] .blog-card{cursor:default;}
+.blog-card:hover{transform:translateY(-4px);box-shadow:var(--glow);}
+.blog-header{padding:1.5rem 1.5rem 0;}
+.blog-cat{font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--purple);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+.blog-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:0.5rem;}
+.blog-excerpt{font-size:0.85rem;color:var(--text-dim);line-height:1.6;}
+.blog-footer{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;margin-top:1rem;border-top:1px solid var(--border2);}
+.blog-date{font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--text-muted);}
+.blog-read{font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--purple);text-decoration:none;transition:color 0.2s;cursor:none;}
+[data-theme="light"] .blog-read{cursor:pointer;}
+.blog-read:hover{color:var(--green);}
+.blog-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:0.62rem;padding:0.2rem 0.5rem;border-radius:3px;margin-right:0.3rem;}
+.badge-new{background:rgba(0,255,136,0.12);color:var(--green);border:1px solid rgba(0,255,136,0.2);}
+.badge-wip{background:rgba(255,209,102,0.12);color:var(--yellow);border:1px solid rgba(255,209,102,0.2);}
+ 
+/* ── INTERESTS ── */
+.interests-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
+.interest-item{background:var(--surface);border:1px solid var(--border2);border-radius:12px;padding:1.4rem;display:flex;flex-direction:column;gap:0.6rem;transition:transform 0.2s,border-color 0.2s;}
+.interest-item:hover{transform:translateY(-3px);border-color:rgba(0,255,136,0.3);}
+.interest-emoji{font-size:1.8rem;}
+.interest-name{font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;}
+.interest-desc{font-size:0.8rem;color:var(--text-dim);}
+ 
+/* ── CONTACT ── */
+.contact-section{text-align:center;position:relative;overflow:hidden;}
+.contact-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(0,255,136,0.05),transparent);pointer-events:none;}
+.contact-heading{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,4rem);letter-spacing:-0.03em;margin-bottom:1rem;}
+.contact-heading span{color:var(--green);}
+.contact-sub{color:var(--text-dim);margin-bottom:2.5rem;font-size:1rem;}
+.contact-links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;}
+.contact-link{display:flex;align-items:center;gap:0.6rem;font-family:'DM Mono',monospace;font-size:0.8rem;color:var(--text-dim);background:var(--surface);border:1px solid var(--border2);padding:0.75rem 1.4rem;border-radius:8px;text-decoration:none;transition:all 0.2s;cursor:none;}
+[data-theme="light"] .contact-link{cursor:pointer;}
+.contact-link:hover{color:var(--green);border-color:var(--green);transform:translateY(-2px);}
+.contact-link.highlight{background:var(--green);color:var(--bg);border-color:var(--green);}
+.contact-link.highlight:hover{background:var(--green-dim);}
+.contact-note{font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--text-dim);border:1px dashed rgba(255,255,255,0.1);display:inline-block;padding:0.5rem 1.2rem;border-radius:20px;}
+.contact-note span{color:var(--green);}
+ 
+/* ── FOOTER ── */
+footer{padding:2rem 4rem;border-top:1px solid var(--border2);display:flex;justify-content:space-between;align-items:center;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--text-dim);}
+footer a{color:var(--green);text-decoration:none;}
+ 
+/* ── BACK TO TOP ── */
+#back-to-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;background:var(--green);color:var(--bg);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:none;z-index:800;opacity:0;transform:translateY(10px);transition:all 0.3s;box-shadow:var(--glow);}
+[data-theme="light"] #back-to-top{cursor:pointer;}
+#back-to-top.visible{opacity:1;transform:translateY(0);}
+#back-to-top:hover{background:var(--green-dim);}
+ 
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+ 
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeLeft{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+ 
+/* ── MOBILE ── */
+@media(max-width:1100px){.hero-terminal{display:none;}}
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;position:fixed;top:64px;left:0;right:0;background:var(--nav-bg);flex-direction:column;padding:1.5rem;gap:1rem;border-bottom:1px solid var(--border2);z-index:899;backdrop-filter:blur(20px);}
+  .nav-links.open{display:flex;}
+  .nav-mobile-toggle{display:flex;}
+  .hero{padding:7rem 1.5rem 3rem;}
+  .hero-stats{gap:1.5rem;flex-wrap:wrap;}
+  section{padding:4rem 1.5rem;}
+  .about-grid,.mentorship-grid{grid-template-columns:1fr;gap:2rem;}
+  footer{flex-direction:column;gap:0.5rem;text-align:center;}
+}
+</style>
+</head>
+<body>
+ 
+<div id="progress-bar"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<button id="back-to-top" title="Back to top">↑</button>
+ 
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">Nomhle Amanda Ntshwenya</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#mentorship">Mentorship</a></li>
+    <li><a href="#blog">Writeups</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+    <a href="#" class="nav-cta" id="downloadCV">↓ CV</a>
+    <button class="nav-mobile-toggle" id="mobileToggle">☰</button>
+  </div>
+</nav>
+ 
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+  <div class="hero-tag">Available for opportunities · Johannesburg, ZA 🇿🇦</div>
+  <h1 class="hero-title">
+    Junior Software Engineer & Junior QA Engineer by Day,<br>
+    <span class="accent">Cybersecurity</span><br>
+    <span class="dim">Curious by Night.</span>
+  </h1>
+  <p class="hero-sub">
+    I'm <strong>Nomhle Amanda Ntshwenya</strong> — a WeThinkCode_ graduate, cybersecurity enthusiast, and mentorship advocate. I find joy in breaking things to understand how they work, fixing them to make them better, and teaching others to do the same. I'm passionate about building robust software, and also atechnical
+    mentor who once mentored teenagers into builders, SMME teams into winning hackathons and also GKSS Chapter leaders, and I explores the darker corners of the internet <em>ethically</em>.
+    Always curious. Always learning. Always building.
+  </p>
+  <div class="hero-btns">
+    <a href="#projects" class="btn-primary">SEE MY WORK</a>
+    <a href="#contact" class="btn-secondary">GET IN TOUCH</a>
+    <a href="#" class="btn-secondary" id="cvBtn">↓ DOWNLOAD CV</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item"><span class="stat-num">16mo</span><span class="stat-label">WeThinkCode</span></div>
+    <div class="stat-item"><span class="stat-num">6+</span><span class="stat-label">Certifications</span></div>
+    <div class="stat-item"><span class="stat-num">2nd</span><span class="stat-label">Hackathons</span></div>
+    <div class="stat-item"><span class="stat-num">∞</span><span class="stat-label">Curiosity</span></div>
+  </div>
+  <div class="hero-terminal">
+    <div class="terminal-bar">
+      <div class="t-dot"></div><div class="t-dot"></div><div class="t-dot"></div>
+      <span class="terminal-title">nomhle@portfolio ~ </span>
+    </div>
+    <div class="terminal-body" id="termBody">
+      <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd"> whoami</span></div>
+      <div class="t-out g" style="opacity:0">nomhle_amanda</div>
+      <div class="t-line" style="opacity:0"><span class="t-prompt">$</span><span class="t-cmd"> cat skills.txt</span></div>
+      <div class="t-out tc" style="opacity:0">QA Automation · Python · Angular</div>
+      <div class="t-out tc" style="opacity:0">Linux · Cybersecurity · Mentorship</div>
+      <div class="t-line" style="opacity:0"><span class="t-prompt">$</span><span class="t-cmd"> cat status.txt</span></div>
+      <div class="t-out o" style="opacity:0">🚀 Open to opportunities</div>
+      <div class="t-line" style="opacity:0"><span class="t-prompt">$</span><span class="t-cmd"> cat motto.txt</span></div>
+      <div class="t-out p" style="opacity:0">Break things. Fix things. Teach things.</div>
+      <div class="t-line" style="opacity:0"><span class="t-prompt">$</span><span class="t-cursor"></span></div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-wrap reveal">
+      <div class="about-img-placeholder">
+        <div class="about-img-icon">👩🏾‍💻</div>
+        <span>[ Add your photo here ]</span>
+      </div>
+      <div class="about-badge">Joburg, ZA 🇿🇦</div>
+    </div>
+    <div class="about-content reveal">
+      <div class="section-tag">// 01. about me</div>
+      <h2 class="section-title">I Build. I Break.<br>I Mentor. I Grow.</h2>
+      <p>I'm a <strong>WeThinkCode_ graduate</strong> specialising in Software Engineering and  Quality Assurance.</p>
+      <p>My journey started at <strong>Central Johannesburg TVET College</strong>, and grew into a 16-month deep dive at WeThinkCode_, and expanded into cybersecurity — all fuelled by: <em>relentless curiosity</em>.</p>
+      <p>I don't just build things — I <strong>mentor people to build things</strong>. From coaching chapter leaders at Geekulcha, to guiding teenagers with zero coding knowledge to ship their first app at a Techathon and mentoring SMME teams to a winning place. Because knowledge shared multiplies.</p>
+      <div class="about-highlights">
+        <div class="highlight-item"><div class="highlight-icon">🎓</div><div class="highlight-text"><strong>WeThinkCode_</strong>Diploma, Software Engineering</div></div>
+        <div class="highlight-item"><div class="highlight-icon">🔐</div><div class="highlight-text"><strong>Cybersecurity</strong>Google & Cisco Certified</div></div>
+        <div class="highlight-item"><div class="highlight-icon">🏆</div><div class="highlight-text"><strong>2nd Place</strong>W&RSETA Hackathon 2025</div></div>
+        <div class="highlight-item"><div class="highlight-icon">📱</div><div class="highlight-text"><strong>Techathon Mentor</strong>Teens built their first app</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- SKILLS -->
+<section id="skills" class="alt-bg">
+  <div style="text-align:center;margin-bottom:3rem" class="reveal">
+    <div class="section-tag" style="display:inline-block">// 02. skills & expertise</div>
+    <h2 class="section-title">What I Bring<br>to the Table</h2>
+    <p class="section-desc" style="margin:0 auto">Structured testing discipline, low-level Linux curiosity, web dev chops, cybersecurity fundamentals, and the soft skills that actually make teams work.</p>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(0,255,136,0.1);border:1px solid rgba(0,255,136,0.2)">🧪</div><div class="skill-name">Quality Assurance</div></div><div class="skill-tags"><span class="skill-tag tg">Test Case Design</span><span class="skill-tag tg">QA Automation</span><span class="skill-tag tg">Defect Tracking</span><span class="skill-tag tg">Manual Testing</span><span class="skill-tag tg">Software Quality</span></div></div>
+    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.2)">🐍</div><div class="skill-name">Programming</div></div><div class="skill-tags"><span class="skill-tag tc">Python</span><span class="skill-tag tc">Java</span><span class="skill-tag tc">Angular</span><span class="skill-tag tc">TypeScript</span><span class="skill-tag tc">HTML/CSS</span><span class="skill-tag tc">OOP</span><span class="skill-tag tc">Git</span></div></div>
+    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(255,107,53,0.1);border:1px solid rgba(255,107,53,0.2)">🐧</div><div class="skill-name">Linux & Systems</div></div><div class="skill-tags"><span class="skill-tag to">Kali Linux</span><span class="skill-tag to">WSL</span><span class="skill-tag to">Live USB</span><span class="skill-tag to">Dual Boot</span><span class="skill-tag to">Bash</span><span class="skill-tag to">System Admin</span></div></div>
+    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(176,108,255,0.1);border:1px solid rgba(176,108,255,0.2)">🔐</div><div class="skill-name">Cybersecurity</div></div><div class="skill-tags"><span class="skill-tag tp">Ethical Hacking</span><span class="skill-tag tp">TryHackMe</span><span class="skill-tag tp">XSS Basics</span><span class="skill-tag tp">Network Security</span><span class="skill-tag tp">Risk Management</span></div></div>
+    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(0,255,136,0.1);border:1px solid rgba(0,255,136,0.2)">🤝</div><div class="skill-name">Leadership & Mentorship</div></div><div class="skill-tags"><span class="skill-tag tg">Mentorship</span><span class="skill-tag tg">Coaching</span><span class="skill-tag tg">Peer Learning</span><span class="skill-tag tg">Communication</span><span class="skill-tag tg">Community Building</span></div></div>
+    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.2)">🛠️</div><div class="skill-name">Tools & Workflow</div></div><div class="skill-tags"><span class="skill-tag tc">Agile / Scrum</span><span class="skill-tag tc">GitHub</span><span class="skill-tag tc">VS Code</span><span class="skill-tag tc">Lovable</span><span class="skill-tag tc">Microsoft Office</span></div></div>
+  </div>
+</section>
+ 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="reveal" style="margin-bottom:2rem">
+    <div class="section-tag">// 03. projects</div>
+    <h2 class="section-title">Things I've Built<br>(& Broken on Purpose)</h2>
+    <p class="section-desc">Real work. Real learning. Each project taught me something no textbook could.</p>
+  </div>
+  <div class="projects-filter reveal">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="qa">Software Engineer & QA / Testing</button>
+    <button class="filter-btn" data-filter="python">Python</button>
+    <button class="filter-btn" data-filter="web">Web Dev</button>
+    <button class="filter-btn" data-filter="cyber">Cybersecurity</button>
+    <button class="filter-btn" data-filter="mentor">Mentorship</button>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card reveal" data-cat="qa"><div class="project-thumb" style="background:linear-gradient(135deg,#0a1628,#1a3a1a)">🧪</div><div class="project-body"><div class="project-type">Software Engineering & Quality Assurance</div><div class="project-name">Software Engineering & QA Portfolio</div><p class="project-desc">Comprehensive test cases, automated scripts, and defect reports built during my WeThinkCode_ QA elective. Covers functional, regression, and edge-case testing with documented outcomes.</p><div class="project-stack"><span class="skill-tag tg">QA Automation</span><span class="skill-tag tc">Python</span><span class="skill-tag to">Test Design</span></div><div class="project-footer"><a href="#" class="proj-link">⬡ GitHub →</a><a href="#" class="proj-link">⬡ Live Demo →</a></div></div></div>
+    <div class="project-card reveal" data-cat="python"><div class="project-thumb" style="background:linear-gradient(135deg,#0a1628,#1a1a3a)">🤖</div><div class="project-body"><div class="project-type">Python Automation</div><div class="project-name">Python Automation Script</div><p class="project-desc">A script that automates a repetitive workflow to save time, reduce human error, and prove that the best kind of laziness is writing code that works for you while you sleep.</p><div class="project-stack"><span class="skill-tag tc">Python</span><span class="skill-tag tg">Automation</span><span class="skill-tag to">Linux</span></div><div class="project-footer"><a href="#" class="proj-link">⬡ GitHub →</a><a href="#" class="proj-link">⬡ Demo →</a></div></div></div>
+    <div class="project-card reveal" data-cat="web"><div class="project-thumb" style="background:linear-gradient(135deg,#0a1628,#2a1a0a)">🌐</div><div class="project-body"><div class="project-type">Web Development</div><div class="project-name">Angular Web Application</div><p class="project-desc">A responsive web app built with Angular — complete with component architecture, routing, and API integration. Because building for the web means building for everyone.</p><div class="project-stack"><span class="skill-tag to">Angular</span><span class="skill-tag tc">TypeScript</span><span class="skill-tag tp">HTML/CSS</span></div><div class="project-footer"><a href="#" class="proj-link">⬡ GitHub →</a><a href="#" class="proj-link">⬡ Live →</a></div></div></div>
+    <div class="project-card reveal" data-cat="cyber"><div class="project-thumb" style="background:linear-gradient(135deg,#0a1628,#1a0a2a)">🔐</div><div class="project-body"><div class="project-type">Cybersecurity</div><div	class("proj-link")}>TryHackMe Room Walkthrough</ div >< p  >Documented walkthrough covering reconnaissance, exploitation, and privilege escalation. Proof that I explore the dark side of tech with good intentions and a lot of notes.< / p >< div  >
+  </div>
+</section>
+ 
+<!-- MENTORSHIP -->
+<section id="mentorship" class="alt-bg">
+  <div class="mentorship-grid">
+    <div>
+      <div class="section-tag reveal">// 04. mentorship & leadership</div>
+      <h2 class="section-title reveal">I Give Back.<br>Every Time.</h2>
+      <p class="section-desc reveal">Knowledge shared multiplies. Here is where I invest in the next generation of South African tech talent.</p>
+      <div class="mentor-cards">
+        <div class="mentor-card reveal"><div class="mentor-icon">🏆</div><div><div class="mentor-card-title">W&RSETA Hackathon Mentor</div><div class="mentor-card-desc">Coached SMME teams through a national fraud detection MVP challenge at Maribe. My team placed 2nd. Real problems, real pressure, real results.</div></div></div>
+        <div class="mentor-card reveal"><div class="mentor-icon">🌱</div><div><div class="mentor-card-title">Geekulcha Student Society Chapter Leader Mentor</div><div class="mentor-card-desc">Coaching student chapter leaders across South Africa on leadership, industry readiness, and career development at one of SA's most active student tech communities.</div></div></div>
+        <div class="mentor-card reveal"><div class="mentor-icon">📱</div><div><div class="mentor-card-title">Youth Techathon Volunteer</div><div class="mentor-card-desc">Mentored teenagers with zero coding background through a Techathon. They left with a working app built on Lovable and the belief that they can build anything and they are unstoppable.</div></div></div>
+        <div class="mentor-card reveal"><div class="mentor-icon">🎓</div><div><div class="mentor-card-title">Placement Facilitator — WeThinkCode_</div><div class="mentor-card-desc">Supporting the placement of software engineering graduates into industry — bridging the gap between education and employment for emerging tech talent.</div></div></div>
+      </div>
+    </div>
+    <div class="impact-box reveal">
+      <div class="impact-title">📊 Impact Dashboard</div>
+      <div class="impact-stats">
+        <div class="impact-stat"><div class="impact-stat-top"><span class="impact-stat-label">StudentChapter leaders mentored</span><span class="impact-stat-num">10+</span></div><div class="impact-bar"><div class="impact-bar-fill" data-w="80"></div></div></div>
+        <div class="impact-stat"><div class="impact-stat-top"><span class="impact-stat-label">Hackathon teams guided</span><span class="impact-stat-num">Multiple</span></div><div class="impact-bar"><div class="impact-bar-fill" data-w="65"></div></div></div>
+        <div class="impact-stat"><div class="impact-stat-top"><span class="impact-stat-label">Teens who shipped their first app</span><span class="impact-stat-num">✓</span></div><div class="impact-bar"><div class="impact-bar-fill" data-w="100"></div></div></div>
+        <div class="impact-stat"><div class="impact-stat-top"><span class="impact-stat-label">Hackathon podium finish</span><span class="impact-stat-num">2nd 🥈</span></div><div class="impact-bar"><div class="impact-bar-fill" data-w="95"></div></div></div>
+        <div class="impact-stat"><div class="impact-stat-top"><span class="impact-stat-label">Certifications earned</span><span class="impact-stat-num">6</span></div><div class="impact-bar"><div class="impact-bar-fill" data-w="70"></div></div></div>
+        <div class="impact-stat"><div class="impact-stat-top"><span class="impact-stat-label">Community impact score</span><span class="impact-stat-num">∞</span></div><div class="impact-bar"><div class="impact-bar-fill" data-w="100"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- BLOG / WRITEUPS -->
+<section id="blog">
+  <div class="reveal" style="margin-bottom:3rem">
+    <div class="section-tag">// 05. writeups & blog</div>
+    <h2 class="section-title">Thoughts, Hacks<br>& Lessons Learned</h2>
+    <p class="section-desc">TryHackMe walkthroughs, QA insights, Linux troubleshooting logs, and everything I wish someone had written down when I was learning.</p>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card reveal">
+      <div class="blog-header">
+        <div class="blog-cat">🔐 Cybersecurity</div>
+        <div class="blog-title">My First TryHackMe Room: What I Expected vs Reality <span class="blog-badge badge-new">NEW</span></div>
+        <p class="blog-excerpt">I went in thinking I was ready. I was not. Here's what I learned from my first CTF attempt, the mistakes, the breakthroughs, and the tools I now can't live without.</p>
+      </div>
+      <div class="blog-footer"><span class="blog-date">2026</span><a href="#" class="blog-read">READ →</a></div>
+    </div>
+    <div class="blog-card reveal">
+      <div class="blog-header">
+        <div class="blog-cat">🧪 QA Engineering</div>
+        <div class="blog-title">Writing Test Cases That Actually Catch Bugs <span class="blog-badge badge-new">NEW</span></div>
+        <p class="blog-excerpt">Most test cases miss the obvious. Here is the framework I use to design test cases that find real bugs before users do — with examples from my WeThinkCode_ projects.</p>
+      </div>
+      <div class="blog-footer"><span class="blog-date">2026</span><a href="#" class="blog-read">READ →</a></div>
+    </div>
+    <div class="blog-card reveal">
+      <div class="blog-header">
+        <div class="blog-cat">🐧 Linux</div>
+        <div class="blog-title">Installing Kali Linux on a USB: Everything That Went Wrong <span class="blog-badge badge-wip">WIP</span></div>
+        <p class="blog-excerpt">A very honest account of my Kali Linux live USB journey — including the dual boot disaster, the partition table I accidentally deleted, and how I fixed it all.</p>
+      </div>
+      <div class="blog-footer"><span class="blog-date">Coming soon</span><a href="#" class="blog-read">FOLLOW →</a></div>
+    </div>
+    <div class="blog-card reveal">
+      <div class="blog-header">
+        <div class="blog-cat">🤖 Python</div>
+        <div class="blog-title">Automating the Boring Stuff: My First Python Script <span class="blog-badge badge-wip">WIP</span></div>
+        <p class="blog-excerpt">The script is 40 lines. It saves me 2 hours a week. Here's how I built it, what I got wrong, and why Python is the best first automation language for developers.</p>
+      </div>
+      <div class="blog-footer"><span class="blog-date">Coming soon</span><a href="https://github.com/Nomhle-coder" target="_blank" class="blog-read">HandsOnProject →</a></div>
+    </div>
+    <div class="blog-card reveal">
+      <div class="blog-header">
+        <div class="blog-cat">👩🏾‍🏫 Mentorship</div>
+        <div class="blog-title">Teenagers Built an App in One Day. Here's How. <span class="blog-badge badge-new">NEW</span></div>
+        <p class="blog-excerpt">Imagine a teenager with zero coding knowledge but full of curiosity and zeal to do something they never thought they could be able to do. One Techathon. Impressive results. I couldn't be more proud. The joy, the happiness that gave them, the confidence they gained. They just knew afterwards that the sky was the limit for them. </p>
+      </div>
+      <div class="blog-footer"><span class="blog-date">2026</span><a href="https://tryhackme.com/p/nomhlea2" target="_blank" class="blog-read">READ →</a></div>
+    </div>
+    <div class="blog-card reveal" style="border-style:dashed">
+      <div class="blog-header">
+        <div class="blog-cat">✨ Coming Up</div>
+        <div class="blog-title">More Writeups in Progress...</div>
+        <p class="blog-excerpt">XSS vulnerability lab notes, Angular architecture lessons, career advice for TVET & WeThinkCode_ graduates, and more TryHackMe room walkthroughs.</p>
+      </div>
+      <div class="blog-footer"><span class="blog-date">Watch this space</span><a href="https://tryhackme.com/p/nomhlea2" target="_blank" class="blog-read">SUBSCRIBE →</a></div>
+    </div>
+  </div>
+</section>
+ 
+<!-- INTERESTS -->
+<section id="interests" class="alt-bg">
+  <div class="reveal" style="margin-bottom:2.5rem">
+    <div class="section-tag">// 06. interests & hobbies</div>
+    <h2 class="section-title">What Keeps Me<br>Up at Night</h2>
+    <p class="section-desc">The good kind, the kind where you are deep in a TryHackMe room and forget what time it is.</p>
+  </div>
+  <div class="interests-list">
+    <div class="interest-item reveal"><div class="interest-emoji">🔓</div><div class="interest-name">Ethical Hacking</div><div class="interest-desc">TryHackMe rooms, CTFs, and figuring out how systems break so I can help build them better.</div></div>
+    <div class="interest-item reveal"><div class="interest-emoji">🐍</div><div class="interest-name">Python Scripting</div><div class="interest-desc">Automating the boring stuff. Making computers do repetitive work so humans don't have to.</div></div>
+    <div class="interest-item reveal"><div class="interest-emoji">🐧</div><div class="interest-name">Linux Tinkering</div><div class="interest-desc">Installing distros, configuring environments, troubleshooting dual boots. It's a lifestyle.</div></div>
+    <div class="interest-item reveal"><div class="interest-emoji">🌐</div><div class="interest-name">Web Building</div><div class="interest-desc">Angular apps, responsive layouts, and the satisfaction of seeing something you built go live.</div></div>
+    <div class="interest-item reveal"><div class="interest-emoji">🤖</div><div class="interest-name">AI Research Tools</div><div class="interest-desc">Exploring how AI accelerates learning and building  with a critical eye on the how and why.</div></div>
+    <div class="interest-item reveal"><div class="interest-emoji">📈</div><div class="interest-name">Weekly Skill Tracking</div><div class="interest-desc">I track my progress every week. Growth is not an accident, it is a habit.</div></div>
+    <div class="interest-item reveal"><div class="interest-emoji">👩🏾‍🏫</div><div class="interest-name">Mentoring Others</div><div class="interest-desc">The moment someone understands something because of how you explained it. Nothing quite like it.</div></div>
+    <div class="interest-item reveal"><div class="interest-emoji">🏗️</div><div class="interest-name">Portfolio Building</div><div class="interest-desc">Helping people present their best selves to the world. Skills + story = opportunity.</div></div>
+  </div>
+</section>
+ 
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="reveal">
+    <div class="section-tag" style="display:inline-block;margin-bottom:1rem">// 07. contact</div>
+    <h2 class="contact-heading">Let's Build Something<br><span>Amazing Together.</span></h2>
+    <p class="contact-sub">Open to QA roles, developer positions, cybersecurity opportunities, and tech adventures.<br>If you have an interesting problem, I probably want to help solve it.</p>
+    <div class="contact-links">
+      <a href="mailto:nomhlea2@gmail.com" class="contact-link highlight">✉ nomhlea2@gmail.com</a>
+      <a href="https://linkedin.com/in/nomhlentshwenya-a2912923b" target="_blank" class="contact-link">🔗 LinkedIn</a>
+      <a href="https://github.com/Nomhle-coder" target="_blank" class="contact-link">🔗 GitHub</a>
+      <a href="#" class="contact-link" id="dlCv">↓ Download CV</a>
+      <a href="https://tryhackme.com/p/nomhlea2" target="_blank" class="contact-link">🔗 TryHackMe Profile</a>
+    </div>
+    <div class="contact-note">Response time: <span>usually within 24 hours</span> · Based in <span>Johannesburg, ZA 🇿🇦</span> · <span>Open to remote & hybrid</span></div>
+  </div>
+</section>
+ 
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Nomhle Amanda — Built with curiosity & caffeine ☕</span>
+  <span>Designed to stand out · <a href="#home">Back to top ↑</a></span>
+</footer>
+ 
+<script>
+// ── CURSOR
+const cur = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX; my=e.clientY;
+  cur.style.transform=`translate(${mx-6}px,${my-6}px)`;
+});
+(function anim(){
+  rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12;
+  ring.style.transform=`translate(${rx-18}px,${ry-18}px)`;
+  requestAnimationFrame(anim);
+})();
+document.querySelectorAll('a,button,.skill-card,.project-card,.mentor-card,.interest-item,.blog-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ring.style.width='58px';ring.style.height='58px';ring.style.opacity='0.8';});
+  el.addEventListener('mouseleave',()=>{ring.style.width='36px';ring.style.height='36px';ring.style.opacity='0.5';});
+});
+ 
+// ── THEME TOGGLE
+const toggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+let dark = true;
+toggle.addEventListener('click',()=>{
+  dark=!dark;
+  html.setAttribute('data-theme', dark?'dark':'light');
+  toggle.textContent = dark?'🌙':'☀️';
+});
+ 
+// ── MOBILE NAV
+const mob = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+mob.addEventListener('click',()=>{ navLinks.classList.toggle('open'); mob.textContent = navLinks.classList.contains('open')?'✕':'☰'; });
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ navLinks.classList.remove('open'); mob.textContent='☰'; }));
+ 
+// ── PROGRESS BAR
+const bar = document.getElementById('progress-bar');
+window.addEventListener('scroll',()=>{
+  const h=document.body.scrollHeight - window.innerHeight;
+  bar.style.width=(window.scrollY/h*100)+'%';
+});
+ 
+// ── BACK TO TOP
+const btt = document.getElementById('back-to-top');
+window.addEventListener('scroll',()=>{ btt.classList.toggle('visible',window.scrollY>400); });
+btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+ 
+// ── SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+ 
+// ── REVEAL ON SCROLL
+const revEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach((en,i)=>{ if(en.isIntersecting) setTimeout(()=>en.target.classList.add('visible'),i*70); });
+},{threshold:0.08});
+revEls.forEach(el=>obs.observe(el));
+ 
+// ── IMPACT BARS
+const barObs = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      en.target.querySelectorAll('.impact-bar-fill').forEach(b=>{
+        setTimeout(()=>b.style.width=b.dataset.w+'%',200);
+      });
+    }
+  });
+},{threshold:0.3});
+document.querySelectorAll('.impact-box').forEach(el=>barObs.observe(el));
+ 
+// ── TERMINAL TYPEWRITER
+const termLines = document.querySelectorAll('#termBody > *');
+termLines.forEach((ln,i)=>{
+  if(i===0) return;
+  setTimeout(()=>{ ln.style.opacity='1'; ln.style.transition='opacity 0.3s'; },600+i*350);
+});
+ 
+// ── PROJECT FILTER
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.project-card').forEach(card=>{
+      const cats=card.dataset.cat||'';
+      if(f==='all'||cats.includes(f)){
+        delete card.dataset.hidden;
+        card.style.display='';
+      } else {
+        card.dataset.hidden='true';
+        card.style.display='none';
+      }
+    });
+  });
+});
+ 
+// ── CV DOWNLOAD PLACEHOLDER
+const cvMsg=()=>alert('📄 Add your CV file path here!\n\nReplace the href on the CV button with your actual CV file URL or path.');
+document.getElementById('cvBtn')?.addEventListener('click',e=>{e.preventDefault();cvMsg();});
+document.getElementById('downloadCV')?.addEventListener('click',e=>{e.preventDefault();cvMsg();});
+document.getElementById('dlCv')?.addEventListener('click',e=>{e.preventDefault();cvMsg();});
+</script>
+</body>
+</html>
