@@ -624,11 +624,15 @@ document.querySelectorAll('.filter-btn').forEach(btn=>{
   });
 });
  
-// ── CV DOWNLOAD PLACEHOLDER
-const cvMsg=()=>alert('📄 Add your CV file path here!\n\nReplace the href on the CV button with your actual CV file URL or path.');
-document.getElementById('cvBtn')?.addEventListener('click',e=>{e.preventDefault();cvMsg();});
-document.getElementById('downloadCV')?.addEventListener('click',e=>{e.preventDefault();cvMsg();});
-document.getElementById('dlCv')?.addEventListener('click',e=>{e.preventDefault();cvMsg();});
+// ── CV OPEN
+const cvURL = 'https://1drv.ms/w/c/e9afad94962440d7/IQD3qrYh1XiaQ56DBaTowVcvAatFO47lqIhp1ThxShgwJik?e=rRJASK';
+const openCV = (e) => {
+  e.preventDefault();
+  window.open(cvURL, '_blank');
+};
+document.getElementById('cvBtn')?.addEventListener('click', openCV);
+document.getElementById('downloadCV')?.addEventListener('click', openCV);
+document.getElementById('dlCv')?.addEventListener('click', openCV);
 </script>
 </body>
 </html>
