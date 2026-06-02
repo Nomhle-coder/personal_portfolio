@@ -110,10 +110,23 @@ h2.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2
 .section-desc{color:var(--text-dim);max-width:560px;font-size:1rem;margin-bottom:3rem;}
 .alt-bg{background:var(--surface);}
  
-/* ── ABOUT ── */
+/*/* ── ABOUT ── */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
 .about-img-placeholder{width:100%;aspect-ratio:4/5;background:var(--surface2);border:1px solid var(--border);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:var(--text-dim);font-family:'DM Mono',monospace;font-size:0.8rem;position:relative;overflow:hidden;}
 .about-img-placeholder::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,255,136,0.05),rgba(0,229,255,0.03));}
+
+.about-img-placeholder img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  position:absolute;
+  inset:0;
+  border-radius:16px;
+  display:block;
+  z-index:1;
+}
+
 .about-img-icon{font-size:4rem;}
 .about-badge{position:absolute;bottom:-16px;right:-16px;background:var(--green);color:var(--bg);font-family:'Syne',sans-serif;font-weight:800;font-size:0.75rem;padding:0.6rem 1rem;border-radius:8px;}
 .about-wrap{position:relative;}
@@ -125,7 +138,7 @@ h2.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2
 .highlight-icon{font-size:1.3rem;}
 .highlight-text{font-size:0.85rem;color:var(--text-dim);}
 .highlight-text strong{color:var(--text);display:block;font-size:0.9rem;}
- 
+
 /* ── SKILLS ── */
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
 .skill-card{background:var(--bg);border:1px solid var(--border2);border-radius:12px;padding:1.5rem;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;cursor:none;}
@@ -334,8 +347,15 @@ footer a{color:var(--green);text-decoration:none;}
   <div class="about-grid">
     <div class="about-wrap reveal">
       <div class="about-img-placeholder">
-        <div class="about-img-icon">👩🏾‍💻</div>
-        <span>[ Add your photo here ]</span>
+        <img 
+          src="https://1drv.ms/i/c/e9afad94962440d7/IQAT6zgWNci3S4x3vcxTrQtVATxZ3V7fK0mETBeYQBPYCK8?e=Kgeyvp&download=1" 
+          alt="Nomhle Ntshwenya"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        />
+        <div style="display:none;flex-direction:column;align-items:center;gap:1rem">
+          <div class="about-img-icon">👩🏾‍💻</div>
+          <span>Nomhle Ntshwenya</span>
+        </div>
       </div>
       <div class="about-badge">Joburg, ZA 🇿🇦</div>
     </div>
