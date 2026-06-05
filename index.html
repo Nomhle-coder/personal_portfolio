@@ -3,49 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nomhle Amanda — Software Engineer & QA Engineer & Cybersecurity Enthusiast</title>
-<meta name="description" content="Portfolio of Nomhle Amanda — Junior Software Developer, Junior QA Engineer, Cybersecurity Enthusiast & Technical Mentor based in Johannesburg, South Africa.">
+<title>Nomhle Amanda Ntshwenya — Software Engineer & QA Tester</title>
+<meta name="description" content="Portfolio of Nomhle Amanda Ntshwenya — Software Engineer, QA Engineer, Cybersecurity Enthusiast & Technical Mentor based in Johannesburg, South Africa.">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
 <style>
-/* ── THEME VARIABLES ─────────────────────────────────────────── */
+/* ── THEME VARIABLES — DEEP SPACE ───────────────────────────── */
 [data-theme="dark"] {
-  --bg:#0a0e1a; --surface:#111827; --surface2:#1a2236; --surface3:#0d1525;
-  --green:#00ff88; --green-dim:#00c96a; --cyan:#00e5ff; --orange:#ff6b35; --purple:#b06cff; --yellow:#ffd166;
-  --text:#e8edf5; --text-dim:#7a8ba0; --text-muted:#3d4f65;
-  --border:rgba(0,255,136,0.15); --border2:rgba(255,255,255,0.07);
-  --glow:0 0 30px rgba(0,255,136,0.15);
-  --card-bg:#111827; --nav-bg:rgba(10,14,26,0.88);
+  --bg:#000008; --surface:#04040e; --surface2:#080818; --surface3:#020208;
+  --green:#00cfff; --green-dim:#009fcc; --cyan:#4fc3f7; --orange:#ffd54f; --purple:#7ecfff; --yellow:#b3e5fc;
+  --text:#ddeeff; --text-dim:#607d9a; --text-muted:#1e2d40;
+  --border:rgba(0,180,255,0.12); --border2:rgba(255,255,255,0.06);
+  --glow:0 0 30px rgba(0,207,255,0.2);
+  --card-bg:#04040e; --nav-bg:rgba(0,0,8,0.92);
+  --star:#ffffff; --nebula1:rgba(0,100,200,0.06); --nebula2:rgba(0,207,255,0.04); --nebula3:rgba(20,60,120,0.05);
 }
 [data-theme="light"] {
-  --bg:#f0f4ff; --surface:#ffffff; --surface2:#e8edf8; --surface3:#f7f9ff;
-  --green:#007a42; --green-dim:#006235; --cyan:#0088b3; --orange:#d94f1e; --purple:#7b3fcc; --yellow:#c47a00;
-  --text:#0d1525; --text-dim:#4a5a72; --text-muted:#9aabbf;
-  --border:rgba(0,122,66,0.2); --border2:rgba(0,0,0,0.08);
-  --glow:0 0 20px rgba(0,122,66,0.1);
-  --card-bg:#ffffff; --nav-bg:rgba(240,244,255,0.92);
+  --bg:#f0f6ff; --surface:#ffffff; --surface2:#e4eefc; --surface3:#f7faff;
+  --green:#0077b6; --green-dim:#005f92; --cyan:#0096c7; --orange:#e07800; --purple:#023e8a; --yellow:#0077b6;
+  --text:#0a1628; --text-dim:#4a6080; --text-muted:#b0c4d8;
+  --border:rgba(0,119,182,0.2); --border2:rgba(0,0,0,0.08);
+  --glow:0 0 20px rgba(0,119,182,0.15);
+  --card-bg:#ffffff; --nav-bg:rgba(240,246,255,0.94);
+  --star:#0a1628; --nebula1:rgba(0,119,182,0.04); --nebula2:rgba(0,150,199,0.03); --nebula3:rgba(2,62,138,0.03);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden;cursor:none;transition:background 0.4s,color 0.4s;}
 [data-theme="light"] body{cursor:auto;}
- 
-/* ── CURSOR ── */
+
+/* ═══════════════════════════════════════════════════════════
+   BACKGROUND SYSTEM — DEEP SPACE
+═══════════════════════════════════════════════════════════ */
+#bg-canvas {
+  position:fixed;inset:0;z-index:0;pointer-events:none;width:100vw;height:100vh;
+}
+.bg-blob {
+  position:fixed;border-radius:50%;filter:blur(140px);pointer-events:none;z-index:0;will-change:transform;
+}
+.bg-blob-1 {
+  width:700px;height:700px;top:-200px;right:-200px;
+  background:radial-gradient(circle,rgba(0,80,180,0.09) 0%,rgba(0,207,255,0.05) 50%,transparent 70%);
+  animation:blobDrift1 22s ease-in-out infinite;
+}
+.bg-blob-2 {
+  width:600px;height:600px;bottom:5%;left:-150px;
+  background:radial-gradient(circle,rgba(0,40,120,0.08) 0%,rgba(0,100,200,0.04) 50%,transparent 70%);
+  animation:blobDrift2 28s ease-in-out infinite;
+}
+.bg-blob-3 {
+  width:450px;height:450px;top:40%;left:40%;
+  background:radial-gradient(circle,rgba(10,30,80,0.07) 0%,rgba(0,207,255,0.03) 50%,transparent 70%);
+  animation:blobDrift3 34s ease-in-out infinite;
+}
+[data-theme="light"] .bg-blob-1{background:radial-gradient(circle,rgba(0,119,182,0.07) 0%,transparent 70%);}
+[data-theme="light"] .bg-blob-2{background:radial-gradient(circle,rgba(2,62,138,0.05) 0%,transparent 70%);}
+[data-theme="light"] .bg-blob-3{background:radial-gradient(circle,rgba(0,150,199,0.04) 0%,transparent 70%);}
+@keyframes blobDrift1{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(-40px,30px) scale(1.06);}66%{transform:translate(20px,-20px) scale(0.96);}}
+@keyframes blobDrift2{0%,100%{transform:translate(0,0) scale(1);}40%{transform:translate(50px,-40px) scale(1.08);}70%{transform:translate(-20px,20px) scale(0.94);}}
+@keyframes blobDrift3{0%,100%{transform:scale(1);}50%{transform:scale(1.12) translateY(-25px);}}
+#bg-noise {
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:0.18;
+}
+[data-theme="light"] #bg-noise{opacity:0.06;}
+section{position:relative;}
+section::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;}
+.alt-bg::before{background:radial-gradient(ellipse 60% 40% at 50% 50%,rgba(0,100,200,0.025) 0%,transparent 70%);}
+.contact-section::before{background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(0,207,255,0.04) 0%,transparent 70%);}
+section>*{position:relative;z-index:2;}
+
+/* ── END BACKGROUND SYSTEM ───────────────────────────────── */
+
+/* ── LUCIDE ICONS ── */
+[data-lucide]{display:inline-block;vertical-align:middle;flex-shrink:0;}
+.icon-sm [data-lucide]{width:14px;height:14px;}
+.icon-md [data-lucide]{width:18px;height:18px;}
+.icon-lg [data-lucide]{width:24px;height:24px;}
+.icon-xl [data-lucide]{width:36px;height:36px;}
+.skill-icon [data-lucide]{width:22px;height:22px;stroke-width:1.8;}
+.mentor-icon [data-lucide]{width:22px;height:22px;stroke-width:1.8;}
+.highlight-icon [data-lucide]{width:22px;height:22px;stroke-width:1.8;}
+.interest-emoji [data-lucide]{width:28px;height:28px;stroke-width:1.6;}
+.about-img-icon [data-lucide]{width:64px;height:64px;stroke-width:1.2;opacity:0.4;}
+.contact-link [data-lucide]{width:16px;height:16px;stroke-width:1.8;}
+.proj-link [data-lucide]{width:13px;height:13px;stroke-width:2;}
+.proj-thumb [data-lucide]{width:52px;height:52px;stroke-width:1.2;opacity:0.7;}
+.nav-right [data-lucide]{width:16px;height:16px;}
+.impact-title [data-lucide]{width:20px;height:20px;}
+.blog-cat [data-lucide]{width:13px;height:13px;stroke-width:2;vertical-align:-1px;margin-right:4px;}
+#back-to-top [data-lucide]{width:18px;height:18px;}
+
+/* ── ICON ── */
 .cursor{width:12px;height:12px;background:var(--green);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;mix-blend-mode:screen;transition:background 0.3s;}
 .cursor-ring{width:36px;height:36px;border:1.5px solid var(--green);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;opacity:0.5;transition:width 0.2s,height 0.2s,opacity 0.2s,border-color 0.3s;}
 [data-theme="light"] .cursor,[data-theme="light"] .cursor-ring{display:none;}
- 
-/* ── NOISE ── */
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.35;}
-[data-theme="light"] body::before{opacity:0.1;}
- 
+
 /* ── SCROLLBAR ── */
 ::-webkit-scrollbar{width:4px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:var(--green);border-radius:2px;}
- 
+
 /* ── PROGRESS BAR ── */
-#progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--green),var(--cyan));width:0%;z-index:9997;transition:width 0.1s linear;}
- 
+#progress-bar{position:fixed;top:0;left:0;height:1px;background:linear-gradient(90deg,var(--green),var(--cyan),var(--purple));width:0%;z-index:9997;transition:width 0.1s linear;}
+
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 4rem;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all 0.3s;}
 .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--green);letter-spacing:-0.02em;cursor:none;}
@@ -60,39 +121,39 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:cen
 [data-theme="light"] .nav-cta{cursor:pointer;}
 .nav-cta:hover{background:var(--green-dim);box-shadow:var(--glow);}
 .nav-mobile-toggle{display:none;background:none;border:1px solid var(--border2);color:var(--text);width:38px;height:38px;border-radius:8px;font-size:1.1rem;cursor:pointer;align-items:center;justify-content:center;}
- 
+
 /* ── HERO ── */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:8rem 4rem 4rem;position:relative;overflow:hidden;}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,136,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);}
-[data-theme="light"] .hero-grid{background-image:linear-gradient(rgba(0,122,66,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,122,66,0.06) 1px,transparent 1px);}
-.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
-.orb1{width:500px;height:500px;background:rgba(0,255,136,0.07);top:-100px;right:-100px;}
-.orb2{width:400px;height:400px;background:rgba(0,229,255,0.05);bottom:-80px;left:40%;}
-.orb3{width:300px;height:300px;background:rgba(176,108,255,0.06);top:30%;left:-80px;}
-[data-theme="light"] .orb1{background:rgba(0,122,66,0.08);}
-[data-theme="light"] .orb2{background:rgba(0,136,179,0.06);}
-[data-theme="light"] .orb3{background:rgba(123,63,204,0.05);}
-.hero-tag{font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--green);letter-spacing:0.15em;text-transform:uppercase;border:1px solid var(--border);padding:0.35rem 0.9rem;border-radius:20px;margin-bottom:1.5rem;display:inline-flex;align-items:center;gap:0.5rem;animation:fadeUp 0.6s ease both;}
+
+/* Hero grid — removed, particle canvas handles bg */
+.hero-grid{ display:none; }
+
+
+/* Hero orbs removed — replaced by global blob system above.
+   Keeping .orb classes but making them invisible to avoid layout shifts */
+.orb{display:none;}
+
+.hero-tag{font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--green);letter-spacing:0.15em;text-transform:uppercase;border:1px solid var(--border);padding:0.35rem 0.9rem;border-radius:20px;margin-bottom:1.5rem;display:inline-flex;align-items:center;gap:0.5rem;animation:fadeUp 0.6s ease both;position:relative;z-index:2;}
 .hero-tag::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s ease infinite;}
-h1.hero-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.8rem,6vw,5.5rem);line-height:1.05;letter-spacing:-0.03em;margin-bottom:1rem;animation:fadeUp 0.6s 0.1s ease both;}
+h1.hero-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.8rem,6vw,5.5rem);line-height:1.05;letter-spacing:-0.03em;margin-bottom:1rem;animation:fadeUp 0.6s 0.1s ease both;position:relative;z-index:2;}
 .hero-title .accent{color:var(--green);}
 .hero-title .dim{color:var(--text-dim);font-size:0.75em;display:block;}
-.hero-sub{font-size:1.05rem;color:var(--text-dim);max-width:580px;margin-bottom:2.5rem;line-height:1.75;animation:fadeUp 0.6s 0.2s ease both;}
+.hero-sub{font-size:1.05rem;color:var(--text-dim);max-width:580px;margin-bottom:2.5rem;line-height:1.75;animation:fadeUp 0.6s 0.2s ease both;position:relative;z-index:2;}
 .hero-sub strong{color:var(--text);}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.6s 0.3s ease both;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.6s 0.3s ease both;position:relative;z-index:2;}
 .btn-primary{font-family:'DM Mono',monospace;font-size:0.8rem;font-weight:500;color:var(--bg);background:var(--green);padding:0.85rem 2rem;border-radius:6px;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s;cursor:none;}
 [data-theme="light"] .btn-primary{cursor:pointer;}
-.btn-primary:hover{background:var(--green-dim);box-shadow:0 0 40px rgba(0,255,136,0.3);transform:translateY(-2px);}
+.btn-primary:hover{background:var(--green-dim);box-shadow:0 0 40px rgba(0,207,255,0.3);transform:translateY(-2px);}
 .btn-secondary{font-family:'DM Mono',monospace;font-size:0.8rem;color:var(--text);background:transparent;border:1px solid var(--border2);padding:0.85rem 2rem;border-radius:6px;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s;cursor:none;}
 [data-theme="light"] .btn-secondary{cursor:pointer;}
 .btn-secondary:hover{border-color:var(--green);color:var(--green);transform:translateY(-2px);}
-.hero-stats{display:flex;gap:3rem;margin-top:4rem;animation:fadeUp 0.6s 0.4s ease both;}
+.hero-stats{display:flex;gap:3rem;margin-top:4rem;animation:fadeUp 0.6s 0.4s ease both;position:relative;z-index:2;}
 .stat-item{display:flex;flex-direction:column;gap:0.2rem;}
 .stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--green);}
 .stat-label{font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--text-dim);letter-spacing:0.1em;text-transform:uppercase;}
- 
+
 /* ── TERMINAL ── */
-.hero-terminal{position:absolute;right:4rem;top:50%;transform:translateY(-50%);width:400px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--glow),0 40px 80px rgba(0,0,0,0.5);animation:fadeLeft 0.7s 0.4s ease both;}
+.hero-terminal{position:absolute;right:4rem;top:50%;transform:translateY(-50%);width:400px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--glow),0 40px 80px rgba(0,0,0,0.5);animation:fadeLeft 0.7s 0.4s ease both;z-index:2;}
 .terminal-bar{background:var(--surface2);padding:0.7rem 1rem;display:flex;align-items:center;gap:0.5rem;}
 .t-dot{width:10px;height:10px;border-radius:50%;}
 .t-dot:nth-child(1){background:#ff5f57;} .t-dot:nth-child(2){background:#febc2e;} .t-dot:nth-child(3){background:#28c840;}
@@ -102,15 +163,15 @@ h1.hero-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.8r
 .t-out{color:var(--text-dim);padding-left:1rem;}
 .t-out.g{color:var(--green);} .t-out.o{color:var(--orange);} .t-out.p{color:var(--purple);}
 .t-cursor{display:inline-block;width:8px;height:14px;background:var(--green);vertical-align:middle;animation:blink 1s step-end infinite;}
- 
+
 /* ── SECTION BASE ── */
 section{padding:6rem 4rem;}
 .section-tag{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--green);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;}
 h2.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.02em;margin-bottom:1rem;}
 .section-desc{color:var(--text-dim);max-width:560px;font-size:1rem;margin-bottom:3rem;}
 .alt-bg{background:var(--surface);}
- 
-/*/* ── ABOUT ── */
+
+/* ── ABOUT ── */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
 .about-img-placeholder{width:100%;aspect-ratio:4/5;background:var(--surface2);border:1px solid var(--border);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:var(--text-dim);font-family:'DM Mono',monospace;font-size:0.8rem;position:relative;overflow:hidden;}
 .about-img-placeholder::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,255,136,0.05),rgba(0,229,255,0.03));}
@@ -143,29 +204,29 @@ h2.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
 .skill-card{background:var(--bg);border:1px solid var(--border2);border-radius:12px;padding:1.5rem;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;cursor:none;}
 [data-theme="light"] .skill-card{cursor:default;}
-.skill-card:hover{transform:translateY(-4px);box-shadow:var(--glow);border-color:rgba(0,255,136,0.35);}
+.skill-card:hover{transform:translateY(-4px);box-shadow:var(--glow);border-color:rgba(0,207,255,0.3);}
 .skill-card-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;}
 .skill-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
 .skill-name{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;}
 .skill-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
 .skill-tag{font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.05em;padding:0.25rem 0.6rem;border-radius:4px;border:1px solid;}
-.tg{color:var(--green);border-color:rgba(0,255,136,0.25);background:rgba(0,255,136,0.05);}
-.tc{color:var(--cyan);border-color:rgba(0,229,255,0.25);background:rgba(0,229,255,0.05);}
-.to{color:var(--orange);border-color:rgba(255,107,53,0.25);background:rgba(255,107,53,0.05);}
-.tp{color:var(--purple);border-color:rgba(176,108,255,0.25);background:rgba(176,108,255,0.05);}
-.ty{color:var(--yellow);border-color:rgba(255,209,102,0.25);background:rgba(255,209,102,0.05);}
- 
+.tg{color:var(--green);border-color:rgba(0,207,255,0.2);background:rgba(0,207,255,0.05);}
+.tc{color:var(--cyan);border-color:rgba(79,195,247,0.2);background:rgba(79,195,247,0.05);}
+.to{color:var(--orange);border-color:rgba(255,213,79,0.2);background:rgba(255,213,79,0.05);}
+.tp{color:var(--purple);border-color:rgba(126,207,255,0.2);background:rgba(126,207,255,0.05);}
+.ty{color:var(--yellow);border-color:rgba(179,229,252,0.2);background:rgba(179,229,252,0.05);}
+
 /* ── PROJECTS ── */
 .projects-filter{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2.5rem;}
 .filter-btn{font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.45rem 1rem;border-radius:4px;border:1px solid var(--border2);background:transparent;color:var(--text-dim);cursor:pointer;transition:all 0.2s;}
-.filter-btn.active,.filter-btn:hover{border-color:var(--green);color:var(--green);background:rgba(0,255,136,0.05);}
+.filter-btn.active,.filter-btn:hover{border-color:var(--green);color:var(--green);background:rgba(0,207,255,0.06);}
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;}
 .project-card{background:var(--card-bg);border:1px solid var(--border2);border-radius:16px;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s;cursor:none;}
 [data-theme="light"] .project-card{cursor:default;}
 .project-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.25),var(--glow);}
 .project-card[data-hidden]{display:none;}
 .project-thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden;}
-.project-thumb::after{content:'VIEW PROJECT';position:absolute;inset:0;background:rgba(0,255,136,0.92);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:0.75rem;font-weight:500;letter-spacing:0.15em;color:var(--bg);opacity:0;transition:opacity 0.2s;}
+.project-thumb::after{content:'VIEW PROJECT';position:absolute;inset:0;background:rgba(0,207,255,0.88);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:0.75rem;font-weight:500;letter-spacing:0.15em;color:var(--bg);opacity:0;transition:opacity 0.2s;}
 .project-card:hover .project-thumb::after{opacity:1;}
 .project-body{padding:1.5rem;}
 .project-type{font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--green);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
@@ -176,13 +237,13 @@ h2.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2
 .proj-link{font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--text-dim);text-decoration:none;letter-spacing:0.05em;transition:color 0.2s;cursor:none;}
 [data-theme="light"] .proj-link{cursor:pointer;}
 .proj-link:hover{color:var(--green);}
- 
+
 /* ── MENTORSHIP ── */
 .mentorship-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
 .mentor-cards{display:flex;flex-direction:column;gap:1rem;}
 .mentor-card{background:var(--bg);border:1px solid var(--border2);border-radius:12px;padding:1.4rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color 0.2s,transform 0.2s;}
-.mentor-card:hover{border-color:rgba(0,255,136,0.35);transform:translateX(4px);}
-.mentor-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;background:rgba(0,255,136,0.08);border:1px solid var(--border);}
+.mentor-card:hover{border-color:rgba(0,207,255,0.3);transform:translateX(4px);}
+.mentor-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;background:rgba(0,207,255,0.07);border:1px solid var(--border);}
 .mentor-card-title{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:0.3rem;}
 .mentor-card-desc{font-size:0.85rem;color:var(--text-dim);line-height:1.6;}
 .impact-box{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:2rem;}
@@ -194,7 +255,7 @@ h2.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2
 .impact-stat-num{font-family:'Syne',sans-serif;font-weight:800;color:var(--green);}
 .impact-bar{height:4px;background:var(--surface2);border-radius:2px;overflow:hidden;}
 .impact-bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));border-radius:2px;width:0%;transition:width 1.2s cubic-bezier(0.22,1,0.36,1);}
- 
+
 /* ── BLOG / WRITEUPS ── */
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;}
 .blog-card{background:var(--card-bg);border:1px solid var(--border2);border-radius:14px;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;cursor:none;}
@@ -210,20 +271,19 @@ h2.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2
 [data-theme="light"] .blog-read{cursor:pointer;}
 .blog-read:hover{color:var(--green);}
 .blog-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:0.62rem;padding:0.2rem 0.5rem;border-radius:3px;margin-right:0.3rem;}
-.badge-new{background:rgba(0,255,136,0.12);color:var(--green);border:1px solid rgba(0,255,136,0.2);}
-.badge-wip{background:rgba(255,209,102,0.12);color:var(--yellow);border:1px solid rgba(255,209,102,0.2);}
- 
+.badge-new{background:rgba(0,207,255,0.1);color:var(--green);border:1px solid rgba(0,207,255,0.2);}
+.badge-wip{background:rgba(255,213,79,0.1);color:var(--yellow);border:1px solid rgba(255,213,79,0.2);}
+
 /* ── INTERESTS ── */
 .interests-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
 .interest-item{background:var(--surface);border:1px solid var(--border2);border-radius:12px;padding:1.4rem;display:flex;flex-direction:column;gap:0.6rem;transition:transform 0.2s,border-color 0.2s;}
-.interest-item:hover{transform:translateY(-3px);border-color:rgba(0,255,136,0.3);}
+.interest-item:hover{transform:translateY(-3px);border-color:rgba(0,207,255,0.25);}
 .interest-emoji{font-size:1.8rem;}
 .interest-name{font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;}
 .interest-desc{font-size:0.8rem;color:var(--text-dim);}
- 
+
 /* ── CONTACT ── */
 .contact-section{text-align:center;position:relative;overflow:hidden;}
-.contact-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(0,255,136,0.05),transparent);pointer-events:none;}
 .contact-heading{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,4rem);letter-spacing:-0.03em;margin-bottom:1rem;}
 .contact-heading span{color:var(--green);}
 .contact-sub{color:var(--text-dim);margin-bottom:2.5rem;font-size:1rem;}
@@ -235,27 +295,243 @@ h2.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2
 .contact-link.highlight:hover{background:var(--green-dim);}
 .contact-note{font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--text-dim);border:1px dashed rgba(255,255,255,0.1);display:inline-block;padding:0.5rem 1.2rem;border-radius:20px;}
 .contact-note span{color:var(--green);}
- 
+
 /* ── FOOTER ── */
 footer{padding:2rem 4rem;border-top:1px solid var(--border2);display:flex;justify-content:space-between;align-items:center;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--text-dim);}
 footer a{color:var(--green);text-decoration:none;}
- 
+
 /* ── BACK TO TOP ── */
 #back-to-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;background:var(--green);color:var(--bg);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:none;z-index:800;opacity:0;transform:translateY(10px);transition:all 0.3s;box-shadow:var(--glow);}
 [data-theme="light"] #back-to-top{cursor:pointer;}
 #back-to-top.visible{opacity:1;transform:translateY(0);}
 #back-to-top:hover{background:var(--green-dim);}
- 
+
 /* ── REVEAL ── */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
- 
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeLeft{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:translateX(0)}}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
- 
+
+/* ══════════════════════════════════════════════
+   NEW FEATURES
+══════════════════════════════════════════════ */
+
+/* ── 1. CREATIVE THEME TOGGLE ── */
+.theme-toggle{
+  position:relative;
+  width:auto !important;
+  padding:0 0.9rem !important;
+  gap:0.5rem;
+  font-family:'DM Mono',monospace;
+  font-size:0.62rem !important;
+  letter-spacing:0.08em;
+  overflow:hidden;
+}
+.theme-toggle-track{
+  display:flex;align-items:center;gap:0.5rem;
+  transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+.theme-toggle-label{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);}
+.theme-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 8px var(--green);
+  transition:background 0.3s,box-shadow 0.3s;
+  animation:pulse 2s ease infinite;
+}
+[data-theme="light"] .theme-dot{background:var(--green);box-shadow:0 0 6px var(--green);}
+
+/* ── 2. GLITCH EFFECT ON HERO NAME ── */
+.hero-title[data-glitch]{position:relative;}
+.hero-title[data-glitch]::before,
+.hero-title[data-glitch]::after{
+  content:attr(data-glitch);
+  position:absolute;top:0;left:0;
+  width:100%;height:100%;
+  opacity:0;
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:inherit;line-height:inherit;
+  letter-spacing:inherit;
+}
+.hero-title[data-glitch]::before{color:var(--cyan);clip-path:polygon(0 20%,100% 20%,100% 40%,0 40%);}
+.hero-title[data-glitch]::after{color:var(--orange);clip-path:polygon(0 60%,100% 60%,100% 80%,0 80%);}
+.hero-title[data-glitch]:hover::before{
+  opacity:0.7;
+  animation:glitchTop 0.4s steps(2) forwards;
+}
+.hero-title[data-glitch]:hover::after{
+  opacity:0.7;
+  animation:glitchBot 0.4s steps(2) 0.05s forwards;
+}
+@keyframes glitchTop{
+  0%{transform:translate(-3px,0);clip-path:polygon(0 15%,100% 15%,100% 35%,0 35%);}
+  30%{transform:translate(3px,0);clip-path:polygon(0 10%,100% 10%,100% 30%,0 30%);}
+  60%{transform:translate(-2px,0);clip-path:polygon(0 25%,100% 25%,100% 45%,0 45%);}
+  100%{opacity:0;transform:translate(0,0);}
+}
+@keyframes glitchBot{
+  0%{transform:translate(3px,0);clip-path:polygon(0 55%,100% 55%,100% 75%,0 75%);}
+  40%{transform:translate(-3px,0);clip-path:polygon(0 65%,100% 65%,100% 85%,0 85%);}
+  70%{transform:translate(2px,0);}
+  100%{opacity:0;transform:translate(0,0);}
+}
+
+/* ── 3. TYPEWRITER CYCLING TITLES ── */
+.hero-typewriter{
+  display:inline-block;
+  color:var(--green);
+  border-right:2px solid var(--green);
+  padding-right:3px;
+  min-width:2ch;
+  animation:caretBlink 0.9s step-end infinite;
+}
+@keyframes caretBlink{0%,100%{border-color:var(--green)}50%{border-color:transparent}}
+
+/* ── 4. SMOOTH PAGE TRANSITIONS — stagger groups ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s cubic-bezier(0.16,1,0.3,1),transform 0.65s cubic-bezier(0.16,1,0.3,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:0.08s;}
+.reveal-delay-2{transition-delay:0.16s;}
+.reveal-delay-3{transition-delay:0.24s;}
+.reveal-delay-4{transition-delay:0.32s;}
+
+/* section slide-in from left/right alternating */
+.section-slide-left{opacity:0;transform:translateX(-40px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1);}
+.section-slide-right{opacity:0;transform:translateX(40px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1);}
+.section-slide-left.visible,.section-slide-right.visible{opacity:1;transform:translateX(0);}
+
+/* ── 5. PROJECT MEDIA LIGHTBOX ── */
+#lightbox{
+  position:fixed;inset:0;z-index:9000;
+  background:rgba(9,8,15,0.96);
+  backdrop-filter:blur(20px);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;
+  transition:opacity 0.3s;
+}
+#lightbox.open{opacity:1;pointer-events:all;}
+.lightbox-inner{
+  position:relative;
+  max-width:900px;width:90vw;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;overflow:hidden;
+  transform:scale(0.92) translateY(20px);
+  transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  box-shadow:0 0 80px rgba(0,207,255,0.1),0 40px 100px rgba(0,0,0,0.7);
+}
+#lightbox.open .lightbox-inner{transform:scale(1) translateY(0);}
+.lightbox-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.25rem;
+  background:var(--surface2);
+  border-bottom:1px solid var(--border);
+}
+.lightbox-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);}
+.lightbox-close{
+  background:none;border:none;color:var(--text-dim);
+  cursor:none;font-size:1.2rem;
+  transition:color 0.2s;padding:0.25rem;
+  display:flex;align-items:center;
+}
+[data-theme="light"] .lightbox-close{cursor:pointer;}
+.lightbox-close:hover{color:var(--green);}
+.lightbox-media{
+  width:100%;aspect-ratio:16/9;
+  background:var(--surface2);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.lightbox-media img{width:100%;height:100%;object-fit:cover;}
+.lightbox-placeholder{
+  display:flex;flex-direction:column;align-items:center;gap:1rem;
+  color:var(--text-muted);font-family:'DM Mono',monospace;font-size:0.8rem;
+  text-align:center;padding:2rem;
+}
+.lightbox-placeholder [data-lucide]{width:40px;height:40px;opacity:0.3;}
+.lightbox-body{padding:1.5rem;}
+.lightbox-desc{font-size:0.9rem;color:var(--text-dim);line-height:1.7;margin-bottom:1rem;}
+.lightbox-links{display:flex;gap:0.75rem;flex-wrap:wrap;}
+.lb-btn{
+  font-family:'DM Mono',monospace;font-size:0.7rem;
+  font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+  padding:0.55rem 1.1rem;border-radius:4px;
+  border:1px solid;cursor:none;transition:all 0.2s;
+  display:flex;align-items:center;gap:0.4rem;
+}
+[data-theme="light"] .lb-btn{cursor:pointer;}
+.lb-btn-primary{background:var(--green);color:var(--bg);border-color:var(--green);}
+.lb-btn-primary:hover{box-shadow:0 0 20px rgba(0,207,255,0.4);}
+.lb-btn-ghost{background:transparent;color:var(--text-dim);border-color:var(--border);}
+.lb-btn-ghost:hover{color:var(--green);border-color:var(--green);}
+.proj-card{cursor:none;}
+.proj-card .proj-view{
+  position:absolute;top:0.75rem;right:0.75rem;z-index:5;
+  font-family:'DM Mono',monospace;font-size:0.58rem;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--text-dim);background:rgba(9,8,15,0.7);
+  border:1px solid var(--border2);
+  padding:0.25rem 0.6rem;border-radius:4px;
+  opacity:0;transition:opacity 0.2s;
+  display:flex;align-items:center;gap:0.35rem;
+}
+.proj-card .proj-view [data-lucide]{width:10px;height:10px;}
+.proj-card:hover .proj-view{opacity:1;}
+
+/* ── 6. FUN FACTS PERSONALITY SECTION ── */
+.funfacts-section{padding:5rem 4rem;background:var(--surface);position:relative;overflow:hidden;}
+.funfacts-section::before{
+  content:'// personal.json';
+  position:absolute;top:2rem;right:3rem;
+  font-family:'DM Mono',monospace;font-size:0.65rem;
+  color:var(--text-muted);letter-spacing:0.1em;
+}
+.funfacts-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:1rem;margin-top:3rem;
+}
+.fact-card{
+  background:var(--bg);border:1px solid var(--border2);
+  border-radius:10px;padding:1.25rem;
+  display:flex;flex-direction:column;gap:0.75rem;
+  transition:all 0.25s cubic-bezier(0.16,1,0.3,1);
+  cursor:none;position:relative;overflow:hidden;
+}
+.fact-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(0,207,255,0.04),transparent);
+  opacity:0;transition:opacity 0.25s;
+}
+.fact-card:hover{transform:translateY(-4px);border-color:rgba(0,207,255,0.25);box-shadow:var(--glow);}
+.fact-card:hover::before{opacity:1;}
+.fact-num{
+  font-family:'DM Mono',monospace;font-size:0.6rem;
+  color:var(--text-muted);letter-spacing:0.14em;
+}
+.fact-icon{color:var(--green);}
+.fact-icon [data-lucide]{width:22px;height:22px;stroke-width:1.8;}
+.fact-text{font-size:0.88rem;color:var(--text-dim);line-height:1.65;font-weight:300;}
+.fact-text strong{color:var(--text);font-weight:500;}
+
+/* ── 3D TILT ENHANCED ── */
+.proj-card,.skill-card,.fact-card,.mentor-card{transform-style:preserve-3d;}
+.proj-card *,.skill-card *,.fact-card *,.mentor-card *{pointer-events:none;}
+.proj-card a,.proj-card button{pointer-events:all;}
+
+/* ── EASTER EGG CONSOLE ── */
+/* Applied via JS — no CSS needed */
+
+/* ── MOBILE ADDITIONS ── */
+@media(max-width:900px){
+  .funfacts-section{padding:4rem 1.5rem;}
+  .funfacts-section::before{display:none;}
+  .theme-toggle{padding:0 0.75rem !important;}
+}
+
 /* ── MOBILE ── */
 @media(max-width:1100px){.hero-terminal{display:none;}}
 @media(max-width:900px){
@@ -272,12 +548,39 @@ footer a{color:var(--green);text-decoration:none;}
 </style>
 </head>
 <body>
- 
+
+<!-- LIGHTBOX -->
+<div id="lightbox" role="dialog" aria-modal="true">
+  <div class="lightbox-inner" id="lightboxInner">
+    <div class="lightbox-header">
+      <div class="lightbox-title" id="lbTitle">Project</div>
+      <button class="lightbox-close" id="lbClose"><i data-lucide="x"></i></button>
+    </div>
+    <div class="lightbox-media" id="lbMedia">
+      <div class="lightbox-placeholder">
+        <i data-lucide="image"></i>
+        <span>// screenshot coming soon<br>add your image to lbMedia</span>
+      </div>
+    </div>
+    <div class="lightbox-body">
+      <p class="lightbox-desc" id="lbDesc"></p>
+      <div class="lightbox-links" id="lbLinks"></div>
+    </div>
+  </div>
+</div>
+
+<!-- BACKGROUND LAYER — sits behind everything -->
+<canvas id="bg-canvas"></canvas>
+<div id="bg-noise"></div>
+<div class="bg-blob bg-blob-1"></div>
+<div class="bg-blob bg-blob-2"></div>
+<div class="bg-blob bg-blob-3"></div>
+
 <div id="progress-bar"></div>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
-<button id="back-to-top" title="Back to top">↑</button>
- 
+<button id="back-to-top" title="Back to top"><i data-lucide="arrow-up"></i></button>
+
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-logo">Nomhle Amanda Ntshwenya</div>
@@ -287,39 +590,43 @@ footer a{color:var(--green);text-decoration:none;}
     <li><a href="#projects">Projects</a></li>
     <li><a href="#mentorship">Mentorship</a></li>
     <li><a href="#blog">Writeups</a></li>
+    <li><a href="#funfacts">About Me</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
     <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
-    <a href="#" class="nav-cta" id="downloadCV">↓ CV</a>
-    <button class="nav-mobile-toggle" id="mobileToggle">☰</button>
+      <div class="theme-toggle-track">      
+              </div>
+    </button>
+    <a href="#" class="nav-cta" id="downloadCV"><i data-lucide="download"></i> CV</a>
+    <button class="nav-mobile-toggle" id="mobileToggle"><i data-lucide="menu" id="mobileIcon"></i></button>
   </div>
 </nav>
- 
+
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-grid"></div>
   <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
-  <div class="hero-tag">Available for opportunities · Johannesburg, ZA 🇿🇦</div>
-  <h1 class="hero-title">
-    Software Engineer & QA Engineer by Day,<br>
+  <div class="hero-tag">Hello, I'm Nomhle!</div>
+  <h1 class="hero-title" data-glitch="Software Engineer">
+    Software Engineer & QA Tester<br>
     <span class="accent">Cybersecurity</span><br>
-    <span class="dim">Curious by Night.</span>
+    <span class="dim">Enthusiast</span>
   </h1>
   <p class="hero-sub">
-    I'm <strong>Nomhle Amanda Ntshwenya</strong> — a WeThinkCode_ graduate, cybersecurity enthusiast, and mentorship advocate. I find joy in breaking things to understand how they work, fixing them to make them better, and teaching others to do the same. I'm passionate about building robust software, and also atechnical
-    mentor who once mentored teenagers into builders, SMME teams into winning hackathons and also GKSS Chapter leaders, and I explores the darker corners of the internet <em>ethically</em>.
-    Always curious. Always learning. Always building.
+    I'm <strong>Nomhle Amanda</strong>, a WeThinkCode_ graduate specialising in
+    <span class="hero-typewriter" id="typewriter">Software Engineering</span>.
+    I break bugs before they break users, mentor the next generation, and explore
+    the darker corners of the internet <em>ethically</em>.
   </p>
   <div class="hero-btns">
     <a href="#projects" class="btn-primary">SEE MY WORK</a>
     <a href="#contact" class="btn-secondary">GET IN TOUCH</a>
-    <a href="#" class="btn-secondary" id="cvBtn">↓ DOWNLOAD CV</a>
-  </div>
+    </div>
   <div class="hero-stats">
     <div class="stat-item"><span class="stat-num">16mo</span><span class="stat-label">WeThinkCode</span></div>
     <div class="stat-item"><span class="stat-num">6+</span><span class="stat-label">Certifications</span></div>
-    <div class="stat-item"><span class="stat-num">2nd</span><span class="stat-label">Hackathons</span></div>
+    <div class="stat-item"><span class="stat-num">2nd</span><span class="stat-label">Hackathon Place</span></div>
     <div class="stat-item"><span class="stat-num">∞</span><span class="stat-label">Curiosity</span></div>
   </div>
   <div class="hero-terminal">
@@ -331,17 +638,17 @@ footer a{color:var(--green);text-decoration:none;}
       <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd"> whoami</span></div>
       <div class="t-out g" style="opacity:0">nomhle_amanda</div>
       <div class="t-line" style="opacity:0"><span class="t-prompt">$</span><span class="t-cmd"> cat skills.txt</span></div>
-      <div class="t-out tc" style="opacity:0">QA Automation · Python · Angular</div>
+      <div class="t-out tc" style="opacity:0">Software Engineering · Python · QA Testing </div>
       <div class="t-out tc" style="opacity:0">Linux · Cybersecurity · Mentorship</div>
       <div class="t-line" style="opacity:0"><span class="t-prompt">$</span><span class="t-cmd"> cat status.txt</span></div>
-      <div class="t-out o" style="opacity:0">🚀 Open to opportunities</div>
+      <div class="t-out o" style="opacity:0">Open to opportunities</div>
       <div class="t-line" style="opacity:0"><span class="t-prompt">$</span><span class="t-cmd"> cat motto.txt</span></div>
-      <div class="t-out p" style="opacity:0">Fix things. Teach things.</div>
+      <div class="t-out p" style="opacity:0">Build things. Fix things. Teach things.</div>
       <div class="t-line" style="opacity:0"><span class="t-prompt">$</span><span class="t-cursor"></span></div>
     </div>
   </div>
 </section>
- 
+
 <!-- ABOUT -->
 <section id="about">
   <div class="about-grid">
@@ -352,29 +659,31 @@ footer a{color:var(--green);text-decoration:none;}
           alt="Nomhle Ntshwenya"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
         />
+
         <div style="display:none;flex-direction:column;align-items:center;gap:1rem">
-          <div class="about-img-icon">👩🏾‍💻</div>
+          <div class="about-img-icon"><i data-lucide="user-round"></i></div>
           <span>Nomhle Ntshwenya</span>
         </div>
       </div>
+
       <div class="about-badge">Joburg, ZA</div>
     </div>
     <div class="about-content reveal">
       <div class="section-tag">// 01. about me</div>
       <h2 class="section-title">I Build.<br>I Mentor. I Grow.</h2>
-      <p>I'm a <strong>WeThinkCode_ graduate</strong> specialising in Software Engineering and  Quality Assurance.</p>
-      <p>My journey started at <strong>Central Johannesburg TVET College</strong>, and grew into a 16-month deep dive at WeThinkCode_, and expanded into cybersecurity — all fuelled by: <em>relentless curiosity</em>.</p>
-      <p>I don't just build things — I <strong>mentor people to build things</strong>. From coaching chapter leaders at Geekulcha, to guiding teenagers with zero coding knowledge to ship their first app at a Techathon and mentoring SMME teams to a winning place. Because knowledge shared multiplies.</p>
+      <p>I'm a <strong>WeThinkCode_ graduate</strong> specialising in Software Engineering & QA Testing.</p>
+      <p>My journey started at <strong>Central Johannesburg TVET College</strong>and then grew into a 16 month deep dive at WeThinkCode_, and expanded into Placement Facilitation, ethical hacking, Python automation, and a great passion for cybersecurity, all fuelled by <em>relentless curiosity</em>.</p>
+      <p>I don't just build, I <strong>mentor</strong>. From coaching chapter leaders at Geekulcha, to guiding teenagers with zero coding knowledge to ship their first app at a Techathon. I believe knowledge shared multiplies.</p>
       <div class="about-highlights">
-        <div class="highlight-item"><div class="highlight-icon">🎓</div><div class="highlight-text"><strong>WeThinkCode_</strong>Diploma, Software Engineering</div></div>
-        <div class="highlight-item"><div class="highlight-icon">🔐</div><div class="highlight-text"><strong>Cybersecurity</strong>Google & Cisco Certified</div></div>
-        <div class="highlight-item"><div class="highlight-icon">🏆</div><div class="highlight-text"><strong>2nd Place</strong>W&RSETA Hackathon 2025</div></div>
-        <div class="highlight-item"><div class="highlight-icon">📱</div><div class="highlight-text"><strong>Techathon Mentor</strong>Teens built their first app</div></div>
+        <div class="highlight-item"><div class="highlight-icon"><i data-lucide="graduation-cap"></i></div><div class="highlight-text"><strong>WeThinkCode_</strong>Diploma, Software Engineering</div></div>
+        <div class="highlight-item"><div class="highlight-icon"><i data-lucide="shield-check"></i></div><div class="highlight-text"><strong>Cybersecurity</strong>Google & Cisco Certified</div></div>
+        <div class="highlight-item"><div class="highlight-icon"><i data-lucide="trophy"></i></div><div class="highlight-text"><strong>2nd Place</strong>W&RSETA Hackathon 2025</div></div>
+        <div class="highlight-item"><div class="highlight-icon"><i data-lucide="smartphone"></i></div><div class="highlight-text"><strong>Techathon Mentor</strong>Teens built their first app</div></div>
       </div>
     </div>
   </div>
 </section>
- 
+
 <!-- SKILLS -->
 <section id="skills" class="alt-bg">
   <div style="text-align:center;margin-bottom:3rem" class="reveal">
@@ -383,38 +692,82 @@ footer a{color:var(--green);text-decoration:none;}
     <p class="section-desc" style="margin:0 auto">Structured testing discipline, low-level Linux curiosity, web dev chops, cybersecurity fundamentals, and the soft skills that actually make teams work.</p>
   </div>
   <div class="skills-grid">
-    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(0,255,136,0.1);border:1px solid rgba(0,255,136,0.2)">🧪</div><div class="skill-name">Quality Assurance</div></div><div class="skill-tags"><span class="skill-tag tg">Test Case Design</span><span class="skill-tag tg">QA Automation</span><span class="skill-tag tg">Defect Tracking</span><span class="skill-tag tg">Manual Testing</span><span class="skill-tag tg">Software Quality</span></div></div>
-    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.2)">🐍</div><div class="skill-name">Programming</div></div><div class="skill-tags"><span class="skill-tag tc">Python</span><span class="skill-tag tc">Java</span><span class="skill-tag tc">Angular</span><span class="skill-tag tc">TypeScript</span><span class="skill-tag tc">HTML/CSS</span><span class="skill-tag tc">OOP</span><span class="skill-tag tc">Git</span></div></div>
-    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(255,107,53,0.1);border:1px solid rgba(255,107,53,0.2)">🐧</div><div class="skill-name">Linux & Systems</div></div><div class="skill-tags"><span class="skill-tag to">Kali Linux</span><span class="skill-tag to">WSL</span><span class="skill-tag to">Live USB</span><span class="skill-tag to">Dual Boot</span><span class="skill-tag to">Bash</span><span class="skill-tag to">System Admin</span></div></div>
-    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(176,108,255,0.1);border:1px solid rgba(176,108,255,0.2)">🔐</div><div class="skill-name">Cybersecurity</div></div><div class="skill-tags"><span class="skill-tag tp">Ethical Hacking</span><span class="skill-tag tp">TryHackMe</span><span class="skill-tag tp">XSS Basics</span><span class="skill-tag tp">Network Security</span><span class="skill-tag tp">Risk Management</span></div></div>
-    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(0,255,136,0.1);border:1px solid rgba(0,255,136,0.2)">🤝</div><div class="skill-name">Leadership & Mentorship</div></div><div class="skill-tags"><span class="skill-tag tg">Mentorship</span><span class="skill-tag tg">Coaching</span><span class="skill-tag tg">Peer Learning</span><span class="skill-tag tg">Communication</span><span class="skill-tag tg">Community Building</span></div></div>
-    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.2)">🛠️</div><div class="skill-name">Tools & Workflow</div></div><div class="skill-tags"><span class="skill-tag tc">Agile / Scrum</span><span class="skill-tag tc">GitHub</span><span class="skill-tag tc">VS Code</span><span class="skill-tag tc">Lovable</span><span class="skill-tag tc">Microsoft Office</span></div></div>
+    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(0,207,255,0.1);border:1px solid rgba(0,207,255,0.2)"><i data-lucide="flask-conical"></i></div><div class="skill-name">Quality Assurance</div></div><div class="skill-tags"><span class="skill-tag tg">Test Case Design</span><span class="skill-tag tg">QA Automation</span><span class="skill-tag tg">Defect Tracking</span><span class="skill-tag tg">Manual Testing</span><span class="skill-tag tg">Software Quality</span></div></div>
+    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(79,195,247,0.1);border:1px solid rgba(79,195,247,0.2)"><i data-lucide="code-2"></i></div><div class="skill-name">Programming</div></div><div class="skill-tags"><span class="skill-tag tc">Python</span><span class="skill-tag tc">Java</span><span class="skill-tag tc">Angular</span><span class="skill-tag tc">TypeScript</span><span class="skill-tag tc">HTML/CSS</span><span class="skill-tag tc">OOP</span><span class="skill-tag tc">Git</span></div></div>
+    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(255,213,79,0.1);border:1px solid rgba(255,213,79,0.15)"><i data-lucide="terminal"></i></div><div class="skill-name">Linux & Systems</div></div><div class="skill-tags"><span class="skill-tag to">Kali Linux</span><span class="skill-tag to">WSL</span><span class="skill-tag to">Live USB</span><span class="skill-tag to">Dual Boot</span><span class="skill-tag to">Bash</span><span class="skill-tag to">System Admin</span></div></div>
+    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(126,207,255,0.1);border:1px solid rgba(126,207,255,0.2)"><i data-lucide="shield"></i></div><div class="skill-name">Cybersecurity</div></div><div class="skill-tags"><span class="skill-tag tp">Ethical Hacking</span><span class="skill-tag tp">TryHackMe</span><span class="skill-tag tp">XSS Basics</span><span class="skill-tag tp">Network Security</span><span class="skill-tag tp">Risk Management</span></div></div>
+    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(0,207,255,0.1);border:1px solid rgba(0,207,255,0.2)"><i data-lucide="users"></i></div><div class="skill-name">Leadership & Mentorship</div></div><div class="skill-tags"><span class="skill-tag tg">Mentorship</span><span class="skill-tag tg">Coaching</span><span class="skill-tag tg">Peer Learning</span><span class="skill-tag tg">Communication</span><span class="skill-tag tg">Community Building</span></div></div>
+    <div class="skill-card reveal"><div class="skill-card-header"><div class="skill-icon" style="background:rgba(79,195,247,0.1);border:1px solid rgba(79,195,247,0.2)"><i data-lucide="wrench"></i></div><div class="skill-name">Tools & Workflow</div></div><div class="skill-tags"><span class="skill-tag tc">Agile / Scrum</span><span class="skill-tag tc">GitHub</span><span class="skill-tag tc">VS Code</span><span class="skill-tag tc">Lovable</span><span class="skill-tag tc">Microsoft Office</span></div></div>
   </div>
 </section>
- 
+
 <!-- PROJECTS -->
 <section id="projects">
   <div class="reveal" style="margin-bottom:2rem">
     <div class="section-tag">// 03. projects</div>
     <h2 class="section-title">Things I've Built<br>And still building</h2>
-    <p class="section-desc">Real work. Real learning. Each project taught me something no textbook could.</p>
+    <p class="section-desc">Real work. Real learning.</p>
   </div>
   <div class="projects-filter reveal">
     <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="qa">Software Engineer & QA / Testing</button>
+    <button class="filter-btn" data-filter="qa">Software Engineering, QA / Testing</button>
     <button class="filter-btn" data-filter="python">Python</button>
     <button class="filter-btn" data-filter="web">Web Dev</button>
     <button class="filter-btn" data-filter="cyber">Cybersecurity</button>
     <button class="filter-btn" data-filter="mentor">Mentorship</button>
   </div>
   <div class="projects-grid">
-    <div class="project-card reveal" data-cat="qa"><div class="project-thumb" style="background:linear-gradient(135deg,#0a1628,#1a3a1a)">🧪</div><div class="project-body"><div class="project-type">Software Engineering & Quality Assurance</div><div class="project-name">Software Engineering & QA Portfolio</div><p class="project-desc">Comprehensive test cases, automated scripts, and defect reports built during my WeThinkCode_ QA elective. Covers functional, regression, and edge-case testing with documented outcomes.</p><div class="project-stack"><span class="skill-tag tg">QA Automation</span><span class="skill-tag tc">Python</span><span class="skill-tag to">Test Design</span></div><div class="project-footer"><a href="#" class="proj-link">⬡ GitHub →</a><a href="#" class="proj-link">⬡ Live Demo →</a></div></div></div>
-    <div class="project-card reveal" data-cat="python"><div class="project-thumb" style="background:linear-gradient(135deg,#0a1628,#1a1a3a)">🤖</div><div class="project-body"><div class="project-type">Python Automation</div><div class="project-name">Python Automation Script</div><p class="project-desc">A script that automates a repetitive workflow to save time, reduce human error, and prove that the best kind of laziness is writing code that works for you while you sleep.</p><div class="project-stack"><span class="skill-tag tc">Python</span><span class="skill-tag tg">Automation</span><span class="skill-tag to">Linux</span></div><div class="project-footer"><a href="#" class="proj-link">⬡ GitHub →</a><a href="#" class="proj-link">⬡ Demo →</a></div></div></div>
-    <div class="project-card reveal" data-cat="web"><div class="project-thumb" style="background:linear-gradient(135deg,#0a1628,#2a1a0a)">🌐</div><div class="project-body"><div class="project-type">Web Development</div><div class="project-name">Angular Web Application</div><p class="project-desc">A responsive web app built with Angular — complete with component architecture, routing, and API integration. Because building for the web means building for everyone.</p><div class="project-stack"><span class="skill-tag to">Angular</span><span class="skill-tag tc">TypeScript</span><span class="skill-tag tp">HTML/CSS</span></div><div class="project-footer"><a href="#" class="proj-link">⬡ GitHub →</a><a href="#" class="proj-link">⬡ Live →</a></div></div></div>
-    <div class="project-card reveal" data-cat="cyber"><div class="project-thumb" style="background:linear-gradient(135deg,#0a1628,#1a0a2a)">🔐</div><div class="project-body"><div class="project-type">Cybersecurity</div><div	class("proj-link")}>TryHackMe Room Walkthrough</ div >< p  >Documented walkthrough covering reconnaissance, exploitation, and privilege escalation. Proof that I explore the dark side of tech with good intentions and a lot of notes.< / p >< div  >
+    <div class="project-card reveal" data-cat="qa"
+      data-lb-title="QA Test Suite Portfolio"
+      data-lb-desc="Comprehensive test cases, automated scripts, and defect reports built during my WeThinkCode_ QA elective. Covers functional, regression, and edge-case testing with documented outcomes."
+      data-lb-github="#" data-lb-live="#">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#000510,#001830)">
+        <i data-lucide="flask-conical"></i>
+        <span class="proj-view"><i data-lucide="expand"></i> Preview</span>
+      </div><div class="project-body"><div class="project-type">Software Engineering & Quality Assurance</div><div class="project-name">QA Test Suite Portfolio</div><p class="project-desc">Comprehensive test cases, automated scripts, and defect reports built during my WeThinkCode_ QA elective. Covers functional, regression, and edge-case testing with documented outcomes.</p><div class="project-stack"><span class="skill-tag tg">QA Automation</span><span class="skill-tag tc">Python</span><span class="skill-tag to">Test Design</span></div><div class="project-footer"><a href="#" class="proj-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> GitHub</a><a href="#" class="proj-link"><i data-lucide="external-link"></i> Live Demo</a></div></div></div>
+    <div class="project-card reveal" data-cat="python"
+      data-lb-title="Python Automation Script"
+      data-lb-desc="A script that automates a repetitive workflow — saving time, reducing human error, and proving that the best kind of laziness is writing code that works for you while you sleep."
+      data-lb-github="#" data-lb-live="#">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#000510,#001020)">
+        <i data-lucide="bot"></i>
+        <span class="proj-view"><i data-lucide="expand"></i> Preview</span>
+      </div><div class="project-body"><div class="project-type">Python Automation</div><div class="project-name">Python Automation Script</div><p class="project-desc">A script that automates a repetitive workflow, saving time, reducing human error, and proving that the best kind of laziness is writing code that works for you while you sleep.</p><div class="project-stack"><span class="skill-tag tc">Python</span><span class="skill-tag tg">Automation</span><span class="skill-tag to">Linux</span></div><div class="project-footer"><a href="#" class="proj-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> GitHub</a><a href="#" class="proj-link"><i data-lucide="external-link"></i> Demo</a></div></div></div>
+    <div class="project-card reveal" data-cat="web"
+      data-lb-title="Angular Web Application"
+      data-lb-desc="A responsive web app built with Angular — complete with component architecture, routing, and API integration. Because building for the web means building for everyone."
+      data-lb-github="#" data-lb-live="#">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#000510,#001828)">
+        <i data-lucide="globe"></i>
+        <span class="proj-view"><i data-lucide="expand"></i> Preview</span>
+      </div><div class="project-body"><div class="project-type">Web Development</div><div class="project-name">Angular Web Application</div><p class="project-desc">A responsive web app built with Angular, complete with component architecture, routing, and API integration. Because building for the web means building for everyone.</p><div class="project-stack"><span class="skill-tag to">Angular</span><span class="skill-tag tc">TypeScript</span><span class="skill-tag tp">HTML/CSS</span></div><div class="project-footer"><a href="#" class="proj-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> GitHub</a><a href="#" class="proj-link"><i data-lucide="external-link"></i> Live</a></div></div></div>
+    <div class="project-card reveal" data-cat="cyber"
+      data-lb-title="TryHackMe Room Walkthrough"
+      data-lb-desc="Documented walkthrough covering reconnaissance, exploitation, and privilege escalation. Proof that I explore the dark side of tech with good intentions and a lot of notes."
+      data-lb-github="#" data-lb-live="#">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#000510,#00101e)">
+        <i data-lucide="shield-alert"></i>
+        <span class="proj-view"><i data-lucide="expand"></i> Preview</span>
+      </div><div class="project-body"><div class="project-type">Cybersecurity</div><div class="project-name">TryHackMe Room Walkthrough</div><p class="project-desc">Documented walkthrough covering reconnaissance, exploitation, and privilege escalation. Proof that I explore the dark side of tech with good intentions and a lot of notes.</p><div class="project-stack"><span class="skill-tag tp">Kali Linux</span><span class="skill-tag tp">Ethical Hacking</span><span class="skill-tag to">TryHackMe</span></div><div class="project-footer"><a href="#" class="proj-link"><i data-lucide="file-text"></i> Writeup</a><a href="#" class="proj-link"><i data-lucide="external-link"></i> TryHackMe</a></div></div></div>
+    <div class="project-card reveal" data-cat="mentor"
+      data-lb-title="Teenagers Build Their First App"
+      data-lb-desc="Mentored teenagers with zero coding knowledge through a Techathon. They started with nothing — they ended with a working app built on Lovable. Watching that happen is exactly why I mentor."
+      data-lb-github="#" data-lb-live="#">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#000510,#001418)">
+        <i data-lucide="smartphone"></i>
+        <span class="proj-view"><i data-lucide="expand"></i> Preview</span>
+      </div><div class="project-body"><div class="project-type">Youth Techathon</div><div class="project-name">Teenagers Build Their First App</div><p class="project-desc">Mentored teenagers with zero coding knowledge through a Techathon. They started with nothing, they ended with a working app built on Lovable. Watching that happen is exactly why I mentor.</p><div class="project-stack"><span class="skill-tag tg">Mentorship</span><span class="skill-tag tc">Lovable</span><span class="skill-tag to">App Dev</span></div><div class="project-footer"><a href="#" class="proj-link"><i data-lucide="book-open"></i> Read Story</a><a href="#" class="proj-link"><i data-lucide="external-link"></i> App Link</a></div></div></div>
+    <div class="project-card reveal" data-cat="qa python"
+      data-lb-title="Automated Test Framework"
+      data-lb-desc="A lightweight test automation framework built from scratch using Python — designed to run repeatable test suites, log results, and flag regressions before they reach production."
+      data-lb-github="#" data-lb-live="#">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#000510,#001220)">
+        <i data-lucide="zap"></i>
+        <span class="proj-view"><i data-lucide="expand"></i> Preview</span>
+      </div><div class="project-body"><div class="project-type">QA + Python</div><div class="project-name">Automated Test Framework</div><p class="project-desc">A lightweight test automation framework built from scratch using Python, designed to run repeatable test suites, log results, and flag regressions before they reach production.</p><div class="project-stack"><span class="skill-tag tc">Python</span><span class="skill-tag tg">QA Automation</span><span class="skill-tag tp">Pytest</span></div><div class="project-footer"><a href="#" class="proj-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> GitHub</a><a href="#" class="proj-link"><i data-lucide="file-text"></i> Docs</a></div></div></div>
   </div>
 </section>
- 
+
 <!-- MENTORSHIP -->
 <section id="mentorship" class="alt-bg">
   <div class="mentorship-grid">
@@ -423,27 +776,27 @@ footer a{color:var(--green);text-decoration:none;}
       <h2 class="section-title reveal">I Give Back.<br>Every Time.</h2>
       <p class="section-desc reveal">Knowledge shared multiplies. Here is where I invest in the next generation of South African tech talent.</p>
       <div class="mentor-cards">
-        <div class="mentor-card reveal"><div class="mentor-icon">🏆</div><div><div class="mentor-card-title">W&RSETA Hackathon Mentor</div><div class="mentor-card-desc">Coached SMME teams through a national fraud detection MVP challenge at Maribe. My team placed 2nd. Real problems, real pressure, real results.</div></div></div>
-        <div class="mentor-card reveal"><div class="mentor-icon">🌱</div><div><div class="mentor-card-title">Geekulcha Student Society Chapter Leader Mentor</div><div class="mentor-card-desc">Coaching student chapter leaders across South Africa on leadership, industry readiness, and career development at one of SA's most active student tech communities.</div></div></div>
-        <div class="mentor-card reveal"><div class="mentor-icon">📱</div><div><div class="mentor-card-title">Youth Techathon Volunteer</div><div class="mentor-card-desc">Mentored teenagers with zero coding background through a Techathon. They left with a working app built on Lovable and the belief that they can build anything and they are unstoppable.</div></div></div>
-        <div class="mentor-card reveal"><div class="mentor-icon">🎓</div><div><div class="mentor-card-title">Placement Facilitator — WeThinkCode_</div><div class="mentor-card-desc">Supporting the placement of software engineering graduates into industry — bridging the gap between education and employment for emerging tech talent.</div></div></div>
+        <div class="mentor-card reveal"><div class="mentor-icon"><i data-lucide="trophy"></i></div><div><div class="mentor-card-title">W&RSETA Hackathon Mentor</div><div class="mentor-card-desc">Coached SMME teams through a national fraud detection MVP challenge at Maribe. One team placed 2nd. Real problems, real pressure, real results.</div></div></div>
+        <div class="mentor-card reveal"><div class="mentor-icon"><i data-lucide="sprout"></i></div><div><div class="mentor-card-title">Geekulcha Chapter Leader Mentor</div><div class="mentor-card-desc">Coaching 10+ student chapter leaders across South Africa on leadership, industry readiness, and career development at one of SA's most active student tech communities.</div></div></div>
+        <div class="mentor-card reveal"><div class="mentor-icon"><i data-lucide="smartphone"></i></div><div><div class="mentor-card-title">Youth Techathon Volunteer</div><div class="mentor-card-desc">Mentored teenagers with zero coding background through a Techathon. They left with a working app built on Lovable, and the belief that they can build anything.</div></div></div>
+        <div class="mentor-card reveal"><div class="mentor-icon"><i data-lucide="graduation-cap"></i></div><div><div class="mentor-card-title">Placement Facilitator: WeThinkCode_</div><div class="mentor-card-desc">Supporting the placement of software engineering graduates into industry, bridging the gap between education and employment for emerging tech talent.</div></div></div>
       </div>
     </div>
     <div class="impact-box reveal">
-      <div class="impact-title">📊 Impact Dashboard</div>
+      <div class="impact-title"><i data-lucide="bar-chart-2"></i> Impact Dashboard</div>
       <div class="impact-stats">
-        <div class="impact-stat"><div class="impact-stat-top"><span class="impact-stat-label">StudentChapter leaders mentored</span><span class="impact-stat-num">10+</span></div><div class="impact-bar"><div class="impact-bar-fill" data-w="80"></div></div></div>
+        <div class="impact-stat"><div class="impact-stat-top"><span class="impact-stat-label">Chapter leaders mentored</span><span class="impact-stat-num">10+</span></div><div class="impact-bar"><div class="impact-bar-fill" data-w="80"></div></div></div>
         <div class="impact-stat"><div class="impact-stat-top"><span class="impact-stat-label">Hackathon teams guided</span><span class="impact-stat-num">Multiple</span></div><div class="impact-bar"><div class="impact-bar-fill" data-w="65"></div></div></div>
-        <div class="impact-stat"><div class="impact-stat-top"><span class="impact-stat-label">Teens who shipped their first app</span><span class="impact-stat-num">✓</span></div><div class="impact-bar"><div class="impact-bar-fill" data-w="100"></div></div></div>
-        <div class="impact-stat"><div class="impact-stat-top"><span class="impact-stat-label">Hackathon podium finish</span><span class="impact-stat-num">2nd 🥈</span></div><div class="impact-bar"><div class="impact-bar-fill" data-w="95"></div></div></div>
+        <div class="impact-stat"><div class="impact-stat-top"><span class="impact-stat-label">Teens who shipped their first app</span><span class="impact-stat-num"><i data-lucide="check"></i></span></div><div class="impact-bar"><div class="impact-bar-fill" data-w="100"></div></div></div>
+        <div class="impact-stat"><div class="impact-stat-top"><span class="impact-stat-label">Hackathon podium finish</span><span class="impact-stat-num">2nd</span></div><div class="impact-bar"><div class="impact-bar-fill" data-w="95"></div></div></div>
         <div class="impact-stat"><div class="impact-stat-top"><span class="impact-stat-label">Certifications earned</span><span class="impact-stat-num">6</span></div><div class="impact-bar"><div class="impact-bar-fill" data-w="70"></div></div></div>
         <div class="impact-stat"><div class="impact-stat-top"><span class="impact-stat-label">Community impact score</span><span class="impact-stat-num">∞</span></div><div class="impact-bar"><div class="impact-bar-fill" data-w="100"></div></div></div>
       </div>
     </div>
   </div>
 </section>
- 
-<!-- BLOG / WRITEUPS -->
+
+<!-- BLOG -->
 <section id="blog">
   <div class="reveal" style="margin-bottom:3rem">
     <div class="section-tag">// 05. writeups & blog</div>
@@ -451,57 +804,15 @@ footer a{color:var(--green);text-decoration:none;}
     <p class="section-desc">TryHackMe walkthroughs, QA insights, Linux troubleshooting logs, and everything I wish someone had written down when I was learning.</p>
   </div>
   <div class="blog-grid">
-    <div class="blog-card reveal">
-      <div class="blog-header">
-        <div class="blog-cat">🔐 Cybersecurity</div>
-        <div class="blog-title">My First TryHackMe Room: What I Expected vs Reality <span class="blog-badge badge-new">NEW</span></div>
-        <p class="blog-excerpt">I went in thinking I was ready. I was not. Here's what I learned from my first CTF attempt, the mistakes, the breakthroughs, and the tools I now can't live without.</p>
-      </div>
-      <div class="blog-footer"><span class="blog-date">2026</span><a href="#" class="blog-read">READ →</a></div>
-    </div>
-    <div class="blog-card reveal">
-      <div class="blog-header">
-        <div class="blog-cat">🧪 QA Engineering</div>
-        <div class="blog-title">Writing Test Cases That Actually Catch Bugs <span class="blog-badge badge-new">NEW</span></div>
-        <p class="blog-excerpt">Most test cases miss the obvious. Here is the framework I use to design test cases that find real bugs before users do — with examples from my WeThinkCode_ projects.</p>
-      </div>
-      <div class="blog-footer"><span class="blog-date">2026</span><a href="#" class="blog-read">READ →</a></div>
-    </div>
-    <div class="blog-card reveal">
-      <div class="blog-header">
-        <div class="blog-cat">🐧 Linux</div>
-        <div class="blog-title">Installing Kali Linux on a USB: Everything That Went Wrong <span class="blog-badge badge-wip">WIP</span></div>
-        <p class="blog-excerpt">A very honest account of my Kali Linux live USB journey — including the dual boot disaster, the partition table I accidentally deleted, and how I fixed it all.</p>
-      </div>
-      <div class="blog-footer"><span class="blog-date">Coming soon</span><a href="#" class="blog-read">FOLLOW →</a></div>
-    </div>
-    <div class="blog-card reveal">
-      <div class="blog-header">
-        <div class="blog-cat">🤖 Python</div>
-        <div class="blog-title">Automating the Boring Stuff: My First Python Script <span class="blog-badge badge-wip">WIP</span></div>
-        <p class="blog-excerpt">The script is 40 lines. It saves me 2 hours a week. Here's how I built it, what I got wrong, and why Python is the best first automation language for developers.</p>
-      </div>
-      <div class="blog-footer"><span class="blog-date">Coming soon</span><a href="https://github.com/Nomhle-coder" target="_blank" class="blog-read">HandsOnProject →</a></div>
-    </div>
-    <div class="blog-card reveal">
-      <div class="blog-header">
-        <div class="blog-cat">👩🏾‍🏫 Mentorship</div>
-        <div class="blog-title">Teenagers Built an App in One Day. Here's How. <span class="blog-badge badge-new">NEW</span></div>
-        <p class="blog-excerpt">Imagine a teenager with zero coding knowledge but full of curiosity and zeal to do something they never thought they could be able to do. One Techathon. Impressive results. I couldn't be more proud. The joy, the happiness that gave them, the confidence they gained. They just knew afterwards that the sky was the limit for them. </p>
-      </div>
-      <div class="blog-footer"><span class="blog-date">2026</span><a href="https://tryhackme.com/p/nomhlea2" target="_blank" class="blog-read">READ →</a></div>
-    </div>
-    <div class="blog-card reveal" style="border-style:dashed">
-      <div class="blog-header">
-        <div class="blog-cat">✨ Coming Up</div>
-        <div class="blog-title">More Writeups in Progress...</div>
-        <p class="blog-excerpt">XSS vulnerability lab notes, Angular architecture lessons, career advice for TVET & WeThinkCode_ graduates, and more TryHackMe room walkthroughs.</p>
-      </div>
-      <div class="blog-footer"><span class="blog-date">Watch this space</span><a href="https://tryhackme.com/p/nomhlea2" target="_blank" class="blog-read">SUBSCRIBE →</a></div>
-    </div>
+    <div class="blog-card reveal"><div class="blog-header"><div class="blog-cat"><i data-lucide="shield"></i> Cybersecurity</div><div class="blog-title">My First TryHackMe Room: What I Expected vs Reality <span class="blog-badge badge-new">NEW</span></div><p class="blog-excerpt">I went in thinking I was ready. I was not. Here's what I learned from my first CTF attempt the mistakes, the breakthroughs, and the tools I now can't live without.</p></div><div class="blog-footer"><span class="blog-date">2026</span><a href="#" class="blog-read">READ →</a></div></div>
+    <div class="blog-card reveal"><div class="blog-header"><div class="blog-cat"><i data-lucide="flask-conical"></i> QA Engineering</div><div class="blog-title">Writing Test Cases That Actually Catch Bugs <span class="blog-badge badge-new">NEW</span></div><p class="blog-excerpt">Most test cases miss the obvious. Here is the framework I use to design test cases that find real bugs before users do, with examples from my WeThinkCode_ projects.</p></div><div class="blog-footer"><span class="blog-date">2026</span><a href="#" class="blog-read">READ →</a></div></div>
+    <div class="blog-card reveal"><div class="blog-header"><div class="blog-cat"><i data-lucide="terminal"></i> Linux</div><div class="blog-title">Installing Kali Linux on a USB: Everything That Went Wrong <span class="blog-badge badge-wip">WIP</span></div><p class="blog-excerpt">A very honest account of my Kali Linux live USB journey, including the dual boot disaster, the partition table I accidentally deleted, and how I fixed it all.</p></div><div class="blog-footer"><span class="blog-date">Coming soon</span><a href="#" class="blog-read">FOLLOW →</a></div></div>
+    <div class="blog-card reveal"><div class="blog-header"><div class="blog-cat"><i data-lucide="code-2"></i> Python</div><div class="blog-title">Automating the Boring Stuff: My First Python Script <span class="blog-badge badge-wip">WIP</span></div><p class="blog-excerpt">The script is 40 lines. It saves me 2 hours a week. Here's how I built it, what I got wrong, and why Python is the best first automation language for developers.</p></div><div class="blog-footer"><span class="blog-date">Coming soon</span><a href="#" class="blog-read">FOLLOW →</a></div></div>
+    <div class="blog-card reveal"><div class="blog-header"><div class="blog-cat"><i data-lucide="users"></i> Mentorship</div><div class="blog-title">Teenagers Built an App in One Day. Here's How. <span class="blog-badge badge-new">NEW</span></div><p class="blog-excerpt">Zero coding knowledge. One Techathon. One working app. I was the mentor in the room. This is the story of what happened and why low-code tools are changing who gets to build.</p></div><div class="blog-footer"><span class="blog-date">2026</span><a href="#" class="blog-read">READ →</a></div></div>
+    <div class="blog-card reveal" style="border-style:dashed"><div class="blog-header"><div class="blog-cat"><i data-lucide="sparkles"></i> Coming Up</div><div class="blog-title">More Writeups in Progress...</div><p class="blog-excerpt">XSS vulnerability lab notes, Angular architecture lessons, career advice for TVET & WeThinkCode_ graduates, and more TryHackMe room walkthroughs.</p></div><div class="blog-footer"><span class="blog-date">Watch this space</span><a href="#" class="blog-read">SUBSCRIBE →</a></div></div>
   </div>
 </section>
- 
+
 <!-- INTERESTS -->
 <section id="interests" class="alt-bg">
   <div class="reveal" style="margin-bottom:2.5rem">
@@ -510,24 +821,76 @@ footer a{color:var(--green);text-decoration:none;}
     <p class="section-desc">The good kind, the kind where you are deep in a TryHackMe room and forget what time it is.</p>
   </div>
   <div class="interests-list">
-    <div class="interest-item reveal"><div class="interest-emoji">🔓</div><div class="interest-name">Ethical Hacking</div><div class="interest-desc">TryHackMe rooms, CTFs, and figuring out how systems break so I can help build them better.</div></div>
-    <div class="interest-item reveal"><div class="interest-emoji">🐍</div><div class="interest-name">Python Scripting</div><div class="interest-desc">Automating the boring stuff. Making computers do repetitive work so humans don't have to.</div></div>
-    <div class="interest-item reveal"><div class="interest-emoji">🐧</div><div class="interest-name">Linux Tinkering</div><div class="interest-desc">Installing distros, configuring environments, troubleshooting dual boots. It's a lifestyle.</div></div>
-    <div class="interest-item reveal"><div class="interest-emoji">🌐</div><div class="interest-name">Web Building</div><div class="interest-desc">Angular apps, responsive layouts, and the satisfaction of seeing something you built go live.</div></div>
-    <div class="interest-item reveal"><div class="interest-emoji">🤖</div><div class="interest-name">AI Research Tools</div><div class="interest-desc">Exploring how AI accelerates learning and building  with a critical eye on the how and why.</div></div>
-    <div class="interest-item reveal"><div class="interest-emoji">📈</div><div class="interest-name">Weekly Skill Tracking</div><div class="interest-desc">I track my progress every week. Growth is not an accident, it is a habit.</div></div>
-    <div class="interest-item reveal"><div class="interest-emoji">👩🏾‍🏫</div><div class="interest-name">Mentoring Others</div><div class="interest-desc">The moment someone understands something because of how you explained it. Nothing quite like it.</div></div>
-    <div class="interest-item reveal"><div class="interest-emoji">🏗️</div><div class="interest-name">Portfolio Building</div><div class="interest-desc">Helping people present their best selves to the world. Skills + story = opportunity.</div></div>
+    <div class="interest-item reveal"><div class="interest-emoji"></div><div class="interest-name">Ethical Hacking</div><div class="interest-desc">TryHackMe rooms, CTFs, and figuring out how systems break so I can help build them better.</div></div>
+    <div class="interest-item reveal"><div class="interest-emoji"></div><div class="interest-name">Python Scripting</div><div class="interest-desc">Automating the boring stuff. Making computers do repetitive work so humans don't have to.</div></div>
+    <div class="interest-item reveal"><div class="interest-emoji"></div><div class="interest-name">Linux Tinkering</div><div class="interest-desc">Installing distros, configuring environments, troubleshooting dual boots. It's a lifestyle.</div></div>
+    <div class="interest-item reveal"><div class="interest-emoji"></div><div class="interest-name">Web Building</div><div class="interest-desc">Angular apps, responsive layouts, and the satisfaction of seeing something you built go live.</div></div>
+    <div class="interest-item reveal"><div class="interest-emoji"></div><div class="interest-name">AI Research Tools</div><div class="interest-desc">Exploring how AI accelerates learning and building, with a critical eye on the how and why.</div></div>
+    <div class="interest-item reveal"><div class="interest-emoji"></div><div class="interest-name">Weekly Skill Tracking</div><div class="interest-desc">I track my progress every week. Growth is not an accident, it is a habit.</div></div>
+    <div class="interest-item reveal"><div class="interest-emoji"></div><div class="interest-name">Mentoring Others</div><div class="interest-desc">The moment someone understands something because of how you explained it. Nothing quite like it.</div></div>
+    <div class="interest-item reveal"><div class="interest-emoji"></div><div class="interest-name">Portfolio Building</div><div class="interest-desc">Helping people present their best selves to the world. Skills + story = opportunity.</div></div>
   </div>
 </section>
- 
+
+<!-- FUN FACTS -->
+<section class="funfacts-section" id="funfacts">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-tag reveal"><div style="width:32px;height:1px;background:var(--green);opacity:0.5;display:inline-block;margin-right:0.75rem;vertical-align:middle"></div>07 — The Human Behind The Code</div>
+    <h2 class="section-title reveal" style="margin-top:0.5rem">Things I want you <br>to <em style="font-style:italic;color:var(--green)">know.</em></h2>
+    <p class="section-desc reveal">Because a CV never tells the full story.</p>
+  </div>
+  <div class="funfacts-grid">
+    <div class="fact-card reveal">
+      <div class="fact-num">fact_01</div>
+      <div class="fact-icon"><i data-lucide="coffee"></i></div>
+      <p class="fact-text">I debug best at <strong>2am with coffee</strong>. Something about the silence makes the bugs more visible.</p>
+    </div>
+    <div class="fact-card reveal reveal-delay-1">
+      <div class="fact-num">fact_02</div>
+      <div class="fact-icon"><i data-lucide="heart"></i></div>
+      <p class="fact-text">I got into cybersecurity because I wanted to <strong>understand how things break</strong> , to build things that can't be broken easily.</p>
+    </div>
+    <div class="fact-card reveal reveal-delay-2">
+      <div class="fact-num">fact_03</div>
+      <div class="fact-icon"><i data-lucide="users"></i></div>
+      <p class="fact-text">Mentoring teenagers who built their first app was <strong>more rewarding</strong> than any technical achievement. The look on their faces was priceless.</p>
+    </div>
+    <div class="fact-card reveal reveal-delay-3">
+      <div class="fact-num">fact_04</div>
+      <div class="fact-icon"><i data-lucide="terminal"></i></div>
+      <p class="fact-text">I once broke my laptop dual-booting Kali Linux at midnight. Fixed it by <strong>dawn</strong>.</p>
+    </div>
+    <div class="fact-card reveal">
+      <div class="fact-num">fact_05</div>
+      <div class="fact-icon"><i data-lucide="trending-up"></i></div>
+      <p class="fact-text">I track my skills every week in a personal log. <strong>Growth is a system</strong>, not a feeling.</p>
+    </div>
+    <div class="fact-card reveal reveal-delay-1">
+      <div class="fact-num">fact_06</div>
+      <div class="fact-icon"><i data-lucide="map-pin"></i></div>
+      <p class="fact-text">Proud Johannesburg girl. I believe <strong>world-class engineers</strong> can be built right here in South Africa.</p>
+    </div>
+    <div class="fact-card reveal reveal-delay-2">
+      <div class="fact-num">fact_07</div>
+      <div class="fact-icon"><i data-lucide="book-open"></i></div>
+      <p class="fact-text">I keep a <strong>"things I don't understand yet"</strong> list. I consider that a win, curiosity never runs out.</p>
+    </div>
+    <div class="fact-card reveal reveal-delay-3">
+      <div class="fact-num">fact_08</div>
+      <div class="fact-icon"><i data-lucide="sparkles"></i></div>
+      <p class="fact-text">I believe <strong>great software feels effortless</strong>. The harder it was to build, the more invisible the effort should be to the person using it.</p>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
   <div class="reveal">
     <div class="section-tag" style="display:inline-block;margin-bottom:1rem">// 07. contact</div>
     <h2 class="contact-heading">Let's Build Something<br><span>Amazing Together.</span></h2>
-    <p class="contact-sub">Open to QA roles, developer positions, cybersecurity opportunities, and tech adventures.<br>If you have an interesting problem, I probably want to help solve it.</p>
+    <p class="contact-sub">Open to QA roles, junior developer positions, cybersecurity opportunities, and tech adventures.<br>If you have an interesting problem, I probably want to help solve it.</p>
     <div class="contact-links">
+      <div class="contact-links">
       <a href="mailto:nomhlea2@gmail.com" class="contact-link highlight">✉ nomhlea2@gmail.com</a>
       <a href="https://linkedin.com/in/nomhlentshwenya-a2912923b" target="_blank" class="contact-link">🔗 LinkedIn</a>
       <a href="https://github.com/Nomhle-coder" target="_blank" class="contact-link">🔗 GitHub</a>
@@ -537,15 +900,15 @@ footer a{color:var(--green);text-decoration:none;}
     <div class="contact-note">Response time: <span>usually within 24 hours</span> · Based in <span>Johannesburg, ZA 🇿🇦</span> · <span>Open to remote & hybrid</span></div>
   </div>
 </section>
- 
+
 <!-- FOOTER -->
 <footer>
-  <span>© 2026 Nomhle Amanda — Built with curiosity & caffeine ☕</span>
+  <span>© 2026 Nomhle Amanda, Built with curiosity</span>
   <span>Designed to stand out · <a href="#home">Back to top ↑</a></span>
 </footer>
- 
+
 <script>
-// ── CURSOR
+function initPortfolio() {
 const cur = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 let mx=0,my=0,rx=0,ry=0;
@@ -562,35 +925,134 @@ document.querySelectorAll('a,button,.skill-card,.project-card,.mentor-card,.inte
   el.addEventListener('mouseenter',()=>{ring.style.width='58px';ring.style.height='58px';ring.style.opacity='0.8';});
   el.addEventListener('mouseleave',()=>{ring.style.width='36px';ring.style.height='36px';ring.style.opacity='0.5';});
 });
- 
-// ── THEME TOGGLE
+
+// ── THEME TOGGLE — creative cyber switch
 const toggle = document.getElementById('themeToggle');
+const themeLabel = document.getElementById('themeLabel');
 const html = document.documentElement;
 let dark = true;
 toggle.addEventListener('click',()=>{
   dark=!dark;
   html.setAttribute('data-theme', dark?'dark':'light');
-  toggle.textContent = dark?'🌙':'☀️';
+  themeLabel.textContent = dark ? 'DARK' : 'LIGHT';
+  lucide.createIcons();
 });
- 
+
 // ── MOBILE NAV
 const mob = document.getElementById('mobileToggle');
 const navLinks = document.getElementById('navLinks');
-mob.addEventListener('click',()=>{ navLinks.classList.toggle('open'); mob.textContent = navLinks.classList.contains('open')?'✕':'☰'; });
-navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ navLinks.classList.remove('open'); mob.textContent='☰'; }));
- 
+const mobileIcon = document.getElementById('mobileIcon');
+mob.addEventListener('click',()=>{
+  navLinks.classList.toggle('open');
+  mob.innerHTML = navLinks.classList.contains('open')
+    ? '<i data-lucide="x"></i>'
+    : '<i data-lucide="menu"></i>';
+  lucide.createIcons();
+});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  navLinks.classList.remove('open');
+  mob.innerHTML='<i data-lucide="menu"></i>';
+  lucide.createIcons();
+}));
+
+// ── TYPEWRITER CYCLING
+const typewriter = document.getElementById('typewriter');
+if(typewriter){
+  const roles = ['QA Testing','Placement Facilitation','Ethical Hacking','Python Scripting','Mentorship','Linux Tinkering'];
+  let ri=0, ci=0, deleting=false, wait=0;
+  function typeLoop(){
+    const word = roles[ri];
+    if(!deleting){
+      typewriter.textContent = word.slice(0,ci+1);
+      ci++;
+      if(ci===word.length){ deleting=true; wait=0; setTimeout(typeLoop,1800); return; }
+    } else {
+      typewriter.textContent = word.slice(0,ci-1);
+      ci--;
+      if(ci===0){ deleting=false; ri=(ri+1)%roles.length; }
+    }
+    setTimeout(typeLoop, deleting?55:90);
+  }
+  setTimeout(typeLoop, 1200);
+}
+
+// ── PROJECT LIGHTBOX
+const lightbox = document.getElementById('lightbox');
+const lbTitle = document.getElementById('lbTitle');
+const lbDesc = document.getElementById('lbDesc');
+const lbLinks = document.getElementById('lbLinks');
+const lbClose = document.getElementById('lbClose');
+
+document.querySelectorAll('.project-card').forEach(card=>{
+  card.addEventListener('click', e=>{
+    if(e.target.closest('a')) return; // let links work normally
+    const title = card.dataset.lbTitle || 'Project';
+    const desc  = card.dataset.lbDesc  || '';
+    const gh    = card.dataset.lbGithub;
+    const live  = card.dataset.lbLive;
+    lbTitle.textContent = title;
+    lbDesc.textContent  = desc;
+    lbLinks.innerHTML = `
+      ${gh ? `<a href="${gh}" class="lb-btn lb-btn-primary" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> GitHub</a>` : ''}
+      ${live ? `<a href="${live}" class="lb-btn lb-btn-ghost" target="_blank"><i data-lucide="external-link"></i> Live Demo</a>` : ''}
+    `;
+    lightbox.classList.add('open');
+    document.body.style.overflow='hidden';
+    lucide.createIcons();
+  });
+});
+lbClose.addEventListener('click',closeLightbox);
+lightbox.addEventListener('click',e=>{ if(e.target===lightbox) closeLightbox(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLightbox(); });
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  document.body.style.overflow='';
+}
+
+// ── EASTER EGG — console art
+console.log(
+  '%c\n ███╗   ██╗ ██████╗ ███╗   ███╗██╗  ██╗██╗     ███████╗\n ████╗  ██║██╔═══██╗████╗ ████║██║  ██║██║     ██╔════╝\n ██╔██╗ ██║██║   ██║██╔████╔██║███████║██║     █████╗  \n ██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║     ██╔══╝  \n ██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║███████╗███████╗\n ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝\n',
+  'color:#00cfff;font-size:10px;font-family:monospace;line-height:1.4'
+);
+console.log('%c👋 Hey curious developer! I see you found the console.', 'color:#4fc3f7;font-size:13px;font-weight:bold');
+console.log("%cYou're exactly the kind of person I want to work with.\nLet's connect → nomhlea2@gmail.com", 'color:#607d9a;font-size:12px;line-height:1.6');
+
+// ── SECTION SLIDE ANIMATIONS
+document.querySelectorAll('h2.section-title').forEach((el,i)=>{
+  el.classList.add(i%2===0 ? 'section-slide-left' : 'section-slide-right');
+});
+const slideObs = new IntersectionObserver(entries=>{
+  entries.forEach(en=>{ if(en.isIntersecting) en.target.classList.add('visible'); });
+},{threshold:0.15});
+document.querySelectorAll('.section-slide-left,.section-slide-right').forEach(el=>slideObs.observe(el));
+
+// ── ENHANCED 3D TILT
+document.querySelectorAll('.proj-card,.skill-card,.fact-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=((e.clientX-r.left)/r.width-0.5)*14;
+    const y=((e.clientY-r.top)/r.height-0.5)*-14;
+    card.style.transform=`perspective(800px) rotateX(${y}deg) rotateY(${x}deg) translateY(-4px)`;
+  });
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform='';
+    card.style.transition='transform 0.5s cubic-bezier(0.16,1,0.3,1)';
+    setTimeout(()=>card.style.transition='',500);
+  });
+});
+
 // ── PROGRESS BAR
 const bar = document.getElementById('progress-bar');
 window.addEventListener('scroll',()=>{
   const h=document.body.scrollHeight - window.innerHeight;
   bar.style.width=(window.scrollY/h*100)+'%';
 });
- 
+
 // ── BACK TO TOP
 const btt = document.getElementById('back-to-top');
 window.addEventListener('scroll',()=>{ btt.classList.toggle('visible',window.scrollY>400); });
 btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
- 
+
 // ── SMOOTH SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
@@ -598,14 +1060,138 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
   });
 });
- 
+
+// ── DEEP SPACE STAR FIELD ANIMATION
+(function(){
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  const isDark = ()=>document.documentElement.getAttribute('data-theme')!=='light';
+  let W,H,stars=[],shooters=[],animId;
+
+  function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
+
+  function rand(a,b){ return Math.random()*(b-a)+a; }
+
+  // Create star layers: tiny distant + medium + few bright foreground
+  function initStars(){
+    stars=[];
+    // Tiny distant stars
+    for(let i=0;i<220;i++) stars.push({x:rand(0,W),y:rand(0,H),r:rand(0.3,0.8),alpha:rand(0.2,0.55),twinkleSpeed:rand(0.004,0.012),twinkleOffset:rand(0,Math.PI*2),layer:0});
+    // Medium stars
+    for(let i=0;i<80;i++) stars.push({x:rand(0,W),y:rand(0,H),r:rand(0.8,1.5),alpha:rand(0.3,0.7),twinkleSpeed:rand(0.006,0.016),twinkleOffset:rand(0,Math.PI*2),layer:1});
+    // Bright foreground stars with glow
+    for(let i=0;i<22;i++) stars.push({x:rand(0,W),y:rand(0,H),r:rand(1.5,2.8),alpha:rand(0.5,0.9),twinkleSpeed:rand(0.008,0.02),twinkleOffset:rand(0,Math.PI*2),layer:2});
+    // Blue-tinted stars
+    for(let i=0;i<30;i++) stars.push({x:rand(0,W),y:rand(0,H),r:rand(0.6,1.2),alpha:rand(0.3,0.6),twinkleSpeed:rand(0.005,0.014),twinkleOffset:rand(0,Math.PI*2),layer:3,blue:true});
+  }
+
+  function spawnShooter(){
+    shooters.push({
+      x:rand(0,W*0.6), y:rand(0,H*0.3),
+      vx:rand(3,6), vy:rand(1.5,3.5),
+      life:1, decay:rand(0.012,0.02),
+      len:rand(80,160)
+    });
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const dark=isDark();
+    const t=Date.now()*0.001;
+
+    // Stars
+    stars.forEach(s=>{
+      s.twinkleOffset+=s.twinkleSpeed;
+      const a=s.alpha*(0.7+0.3*Math.sin(s.twinkleOffset));
+      if(!dark){ if(s.alpha<0.4) return; }
+
+      // Blue-tinted stars
+      const color = s.blue
+        ? dark ? `rgba(100,200,255,${a})` : `rgba(0,80,160,${a*0.6})`
+        : dark ? `rgba(255,255,255,${a})` : `rgba(10,30,80,${a*0.5})`;
+
+      if(s.layer===2 && dark){
+        // Bright star with glow
+        const g=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*5);
+        g.addColorStop(0,`rgba(200,235,255,${a})`);
+        g.addColorStop(0.3,`rgba(150,200,255,${a*0.4})`);
+        g.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.beginPath(); ctx.arc(s.x,s.y,s.r*5,0,Math.PI*2);
+        ctx.fillStyle=g; ctx.fill();
+        // Cross spike
+        ctx.strokeStyle=`rgba(200,235,255,${a*0.3})`;
+        ctx.lineWidth=0.5;
+        const sp=s.r*8;
+        ctx.beginPath(); ctx.moveTo(s.x-sp,s.y); ctx.lineTo(s.x+sp,s.y); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(s.x,s.y-sp); ctx.lineTo(s.x,s.y+sp); ctx.stroke();
+      }
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle=color; ctx.fill();
+    });
+
+    // Shooting stars
+    shooters.forEach((sh,i)=>{
+      sh.x+=sh.vx; sh.y+=sh.vy; sh.life-=sh.decay;
+      if(sh.life<=0){ shooters.splice(i,1); return; }
+      const tx=sh.x-sh.vx*(sh.len/sh.vx);
+      const ty=sh.y-sh.vy*(sh.len/sh.vx);
+      const g=ctx.createLinearGradient(tx,ty,sh.x,sh.y);
+      g.addColorStop(0,'rgba(0,0,0,0)');
+      g.addColorStop(0.7,`rgba(150,220,255,${sh.life*0.4})`);
+      g.addColorStop(1,`rgba(200,240,255,${sh.life*0.8})`);
+      ctx.beginPath(); ctx.moveTo(tx,ty); ctx.lineTo(sh.x,sh.y);
+      ctx.strokeStyle=g; ctx.lineWidth=1.2; ctx.stroke();
+    });
+
+    animId=requestAnimationFrame(draw);
+  }
+
+  // Spawn shooting star every 4-8 seconds
+  function shootLoop(){
+    spawnShooter();
+    setTimeout(shootLoop, rand(3500,7500));
+  }
+
+  // Mouse parallax — slow star shift
+  let mx=W/2, my=H/2;
+  window.addEventListener('mousemove',e=>{
+    const dx=(e.clientX-W/2)*0.0004;
+    const dy=(e.clientY-H/2)*0.0004;
+    stars.forEach(s=>{
+      const speed=(s.layer+1)*0.6;
+      s.x+=dx*speed; s.y+=dy*speed;
+      if(s.x<0)s.x=W; if(s.x>W)s.x=0;
+      if(s.y<0)s.y=H; if(s.y>H)s.y=0;
+    });
+  },{passive:true});
+
+  // Scroll parallax on blobs
+  window.addEventListener('scroll',()=>{
+    const y=window.scrollY;
+    const b1=document.querySelector('.bg-blob-1');
+    const b2=document.querySelector('.bg-blob-2');
+    const b3=document.querySelector('.bg-blob-3');
+    if(b1)b1.style.transform=`translateY(${y*0.04}px)`;
+    if(b2)b2.style.transform=`translateY(${y*-0.03}px)`;
+    if(b3)b3.style.transform=`translateY(${y*0.025}px)`;
+  },{passive:true});
+
+  // Reinit on theme change
+  const themeToggle=document.getElementById('themeToggle');
+  if(themeToggle) themeToggle.addEventListener('click',()=>setTimeout(()=>initStars(),50));
+
+  window.addEventListener('resize',()=>{ resize(); initStars(); });
+  resize(); initStars(); draw();
+  setTimeout(shootLoop, 2500);
+})();
+
 // ── REVEAL ON SCROLL
 const revEls = document.querySelectorAll('.reveal');
 const obs = new IntersectionObserver((entries)=>{
   entries.forEach((en,i)=>{ if(en.isIntersecting) setTimeout(()=>en.target.classList.add('visible'),i*70); });
 },{threshold:0.08});
 revEls.forEach(el=>obs.observe(el));
- 
+
 // ── IMPACT BARS
 const barObs = new IntersectionObserver((entries)=>{
   entries.forEach(en=>{
@@ -617,14 +1203,14 @@ const barObs = new IntersectionObserver((entries)=>{
   });
 },{threshold:0.3});
 document.querySelectorAll('.impact-box').forEach(el=>barObs.observe(el));
- 
+
 // ── TERMINAL TYPEWRITER
 const termLines = document.querySelectorAll('#termBody > *');
 termLines.forEach((ln,i)=>{
   if(i===0) return;
   setTimeout(()=>{ ln.style.opacity='1'; ln.style.transition='opacity 0.3s'; },600+i*350);
 });
- 
+
 // ── PROJECT FILTER
 document.querySelectorAll('.filter-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
@@ -643,16 +1229,30 @@ document.querySelectorAll('.filter-btn').forEach(btn=>{
     });
   });
 });
- 
+
 // ── CV OPEN
 const cvURL = 'https://1drv.ms/w/c/e9afad94962440d7/IQD3qrYh1XiaQ56DBaTowVcvAatFO47lqIhp1ThxShgwJik?e=rRJASK';
-const openCV = (e) => {
-  e.preventDefault();
-  window.open(cvURL, '_blank');
-};
+const openCV = (e) => { e.preventDefault(); window.open(cvURL, '_blank'); };
 document.getElementById('cvBtn')?.addEventListener('click', openCV);
 document.getElementById('downloadCV')?.addEventListener('click', openCV);
 document.getElementById('dlCv')?.addEventListener('click', openCV);
+
+// ── INIT LUCIDE ICONS
+lucide.createIcons();
+} // end initPortfolio
+
+// Load Lucide then run everything
+const lucideScript = document.createElement('script');
+lucideScript.src = 'https://unpkg.com/lucide@latest/dist/umd/lucide.min.js';
+lucideScript.onload = initPortfolio;
+lucideScript.onerror = () => {
+  // Fallback: try jsdelivr CDN
+  const fallback = document.createElement('script');
+  fallback.src = 'https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js';
+  fallback.onload = initPortfolio;
+  document.head.appendChild(fallback);
+};
+document.head.appendChild(lucideScript);
 </script>
 </body>
 </html>
